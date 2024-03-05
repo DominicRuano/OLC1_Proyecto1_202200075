@@ -1,0 +1,35 @@
+PROGRAM 
+	! Estadísticas de Ingeniería en Guatemala
+	CONSOLE::PRINT = "-----------------ESTADÍSTICAS DE INGENIERÍA EN GUATEMALA-----------------" END;
+
+	<! Datos estadísticos !>
+	VAR::DOUBLE::ingenierosElectronicos <- 150.0 END;
+	VAR::DOUBLE::ingenierosMecanicos <- 120.0 END;
+	VAR::DOUBLE::ingenierosInformaticos <- 200.0 END;
+
+	CONSOLE::PRINT = "Ingenieros Electrónicos:", ingenierosElectronicos END;
+	CONSOLE::PRINT = "Ingenieros Mecánicos:", ingenierosMecanicos END;
+	CONSOLE::PRINT = "Ingenieros Informáticos:", ingenierosInformaticos END;
+
+	VAR::DOUBLE::totalIngenieros <- SUM(SUM(ingenierosElectronicos, ingenierosMecanicos), ingenierosInformaticos) END;
+	CONSOLE::PRINT = "Total de Ingenieros:", totalIngenieros END;
+
+	CONSOLE::COLUMN = "Número de Ingenieros por Especialidad en Guatemala" -> [ingenierosElectronicos, ingenierosMecanicos, ingenierosInformaticos] END;
+	<!
+		--------------------------------------------
+		Número de Ingenieros por Especialidad en Guatemala
+		--------------------------------------------
+		Ingenieros Electrónicos: 150.0
+		Ingenieros Mecánicos: 120.0
+		Ingenieros Informáticos: 200.0
+		Total de Ingenieros: 470.0
+	!>
+
+	GRAPH_BAR(
+		labels::STRING[] = ["Electrónicos", "Mecánicos", "Informáticos"] END;
+		values::DOUBLE[] = [ingenierosElectronicos, ingenierosMecanicos, ingenierosInformaticos] END;
+		title::STRING = "Número de Ingenieros por Especialidad en Guatemala" END;
+		EXEC GRAPH_BAR
+	) END;
+
+END PROGRAM
