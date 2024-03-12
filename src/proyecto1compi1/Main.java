@@ -11,6 +11,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java_cup.parser;
 
 /**
  *
@@ -280,25 +281,16 @@ public class Main extends javax.swing.JFrame {
         int selectedIndex = jTabbedPane1.getSelectedIndex();
         String analisis = "";
         if (selectedIndex != -1) {
-            JScrollPane scrollPane = (JScrollPane) jTabbedPane1.getComponentAt(selectedIndex);
-            JViewport viewport = scrollPane.getViewport();
-            JTextArea textArea = (JTextArea) viewport.getView();
-            String contenido = textArea.getText();
-            Reader sr = new StringReader(contenido);
-            lexEx1 lx = new lexEx1(sr);
-
-            token tk;
             try {
-                tk = lx.next_token();
-                while (tk.getLexema() != null) {
-                    analisis += "Se detecto: Token = " + tk.gettokenType()+"\t| ER = "+ tk.getER() + "\t| Linea = " + tk.getLine()+  "\t| Columna = " + tk.getColumn() + "\t| Lexema = \"" + tk.getLexema() + "\"\n";
-                    tk = lx.next_token();
-                }
-                jTextArea3.setEditable(true);
-                jTextArea3.setText(analisis);
-                jTextArea3.setEditable(false);
-                System.out.println("----- Fin ejemplo 1 -----");
-            } catch (IOException ex) {
+                JScrollPane scrollPane = (JScrollPane) jTabbedPane1.getComponentAt(selectedIndex);
+                JViewport viewport = scrollPane.getViewport();
+                JTextArea textArea = (JTextArea) viewport.getView();
+                String contenido = textArea.getText();
+                lexEx1 scan = new lexEx1(new BufferedReader(new StringReader(contenido)));
+                // System.out.println(contenido);
+                Parser sintax = new Parser(scan);
+                sintax.parse().toString();
+            } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

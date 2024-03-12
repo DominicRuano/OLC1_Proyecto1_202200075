@@ -1,0 +1,15 @@
+package proyecto1compi1;
+
+import java_cup.runtime.*;
+import java_cup.sym;
+
+class Parser;
+
+terminal IG, UKN, STR, STAPR, ENDPR, DP, PYC, END, ASIG, PA, PC, COMA, ARROBA, CA, CC, POINTER, CHAR, VAR, ARR, SUM, RES, DIV, MULTI, MOD, MEDIA, MEDIANA,MODA, VARIANZA, MIN, MAX, CONSOLE, PRINT, EXEC, EJEX, EJEY, LABEL, COLUMN, VALUES, TITULO, TITULOX, TITULOY, GRAPHPIE, GRAPHBAR, GRAPHLINE, HISTOGRAM, DOUBLE, ID;
+
+non terminal L;
+
+start with L;
+
+L ::= L COMA DOUBLE
+        |DOUBLE ;

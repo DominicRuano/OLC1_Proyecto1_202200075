@@ -1,0 +1,12 @@
+PROGRAM
+	! Declaracion simple
+	var:double::numero1 <- 2024 end; 
+	var:double::modulo1 <- MoD(5,4) end;
+	var:char[]::cadena <- "Ejemplo" end;
+	
+	console::print = cadena, "OLC", modulo1 ,numero1 end;
+	<!
+		Salida en consola:
+			Ejemplo, OLC, 1, 2024
+	!>
+END PROGRAM

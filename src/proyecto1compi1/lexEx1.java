@@ -4,6 +4,7 @@ package proyecto1compi1;
 
 import java.io.*;
 import java.util.ArrayList;
+import java_cup.runtime.*;
 
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * <a href="http://www.jflex.de/">JFlex</a> 1.7.0
  * from the specification file <tt>C:/Users/Dominic/Documents/NetBeansProjects/Proyecto1Compi1/src/proyecto1compi1/Lexer.jflex</tt>
  */
-public class lexEx1 {
+public class lexEx1 implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file */
   public static final int YYEOF = -1;
@@ -445,6 +446,16 @@ public class lexEx1 {
    */
   private int zzFinalHighSurrogate = 0;
 
+  /* user code: */
+    StringBuffer string = new StringBuffer();
+
+    private Symbol symbol(int type){
+            return new Symbol(type, yyline, yycolumn);
+    }
+    private Symbol symbol(int type, Object value){
+            return new Symbol(type, yyline, yycolumn, value);
+    }
+
 
   /**
    * Creates a new scanner
@@ -670,13 +681,25 @@ public class lexEx1 {
 
 
   /**
+   * Contains user EOF-code, which will be executed exactly once,
+   * when the end of file is reached
+   */
+  private void zzDoEOF() throws java.io.IOException {
+    if (!zzEOFDone) {
+      zzEOFDone = true;
+      yyclose();
+    }
+  }
+
+
+  /**
    * Resumes scanning until the next regular expression is matched,
    * the end of input is encountered or an I/O-Error occurs.
    *
    * @return      the next token
    * @exception   java.io.IOException  if any I/O-Error occurs
    */
-  public token next_token() throws java.io.IOException {
+  public java_cup.runtime.Symbol next_token() throws java.io.IOException {
     int zzInput;
     int zzAction;
 
@@ -756,7 +779,8 @@ public class lexEx1 {
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-          { 	return new token(constantes.EOF,null, -1,-1, null);
+            zzDoEOF();
+          { 	return symbol(constantes.EOF);
  }
       }
       else {
@@ -768,13 +792,15 @@ public class lexEx1 {
           case 53: break;
           case 2: 
             { yycolumn += yylength();  
-    return new token(constantes.UKN, yytext(), yyline, yycolumn, "ERROR LEXICO");
+/* ignora se debe agregar una forma de recoger todos los errores mas adelante. */
+    //return new token(constantes.UKN, yytext(), yyline, yycolumn, "ERROR LEXICO");
             } 
             // fall through
           case 54: break;
           case 3: 
             { yycolumn += yylength(); 
-    return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
+    return symbol (ParserSym.ID, yytext());
+    //return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
             } 
             // fall through
           case 55: break;
@@ -792,163 +818,190 @@ public class lexEx1 {
           case 57: break;
           case 6: 
             { yycolumn += yylength();    
-    return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
+    return symbol (ParserSym.IG, yytext());
+    //return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
             } 
             // fall through
           case 58: break;
           case 7: 
             { yycolumn += yylength();    
-    return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
+    return symbol (ParserSym.DP, yytext());
+    //return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
             } 
             // fall through
           case 59: break;
           case 8: 
             { yycolumn += yylength();    
-    return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
+    return symbol (ParserSym.PYC, yytext());
+    //return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
             } 
             // fall through
           case 60: break;
           case 9: 
             { yycolumn += yylength();    
-    return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
+    return symbol (ParserSym.PA, yytext());
+    //return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
             } 
             // fall through
           case 61: break;
           case 10: 
             { yycolumn += yylength();    
-    return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
+    return symbol (ParserSym.PC, yytext());
+    //return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
             } 
             // fall through
           case 62: break;
           case 11: 
             { yycolumn += yylength();    
-    return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
+    return symbol (ParserSym.COMA, yytext());
+    //return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
             } 
             // fall through
           case 63: break;
           case 12: 
             { yycolumn += yylength();    
-    return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
+    return symbol (ParserSym.ARROBA, yytext());
+    //return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
             } 
             // fall through
           case 64: break;
           case 13: 
             { yycolumn += yylength();    
-    return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
+    return symbol (ParserSym.CA, yytext());
+    //return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
             } 
             // fall through
           case 65: break;
           case 14: 
             { yycolumn += yylength();    
-    return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
+    return symbol (ParserSym.CC, yytext());
+    //return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
             } 
             // fall through
           case 66: break;
           case 15: 
             { yycolumn += yylength();   
-    return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
+    return symbol (ParserSym.ASIG, yytext());
+    //return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
             } 
             // fall through
           case 67: break;
           case 16: 
             { yycolumn += yylength();   
-    return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
+    return symbol(ParserSym.STR, yytext());
+    //return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
             } 
             // fall through
           case 68: break;
           case 17: 
             { yycolumn += yylength();   
-    return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
+    return symbol (ParserSym.POINTER, yytext());
+    //return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
             } 
             // fall through
           case 69: break;
           case 18: 
             { yycolumn += yylength();    
-    return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
+    return symbol (ParserSym.DOUBLE, yytext());
+    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
             } 
             // fall through
           case 70: break;
           case 19: 
             { yycolumn += yylength();    
-    return new token (constantes.RES, yytext(), yyline + 1, yycolumn - yylength() + 1, "resta");
+    return symbol (ParserSym.RES, yytext());
+    //return new token (constantes.RES, yytext(), yyline + 1, yycolumn - yylength() + 1, "resta");
             } 
             // fall through
           case 71: break;
           case 20: 
             { yycolumn += yylength();    
-    return new token (constantes.ARR, yytext(), yyline + 1, yycolumn - yylength() + 1, "arr");
+    return symbol (ParserSym.ARR, yytext());
+    //return new token (constantes.ARR, yytext(), yyline + 1, yycolumn - yylength() + 1, "arr");
             } 
             // fall through
           case 72: break;
           case 21: 
             { yycolumn += yylength();    
-    return new token (constantes.MOD, yytext(), yyline + 1, yycolumn - yylength() + 1, "modulo");
+    return symbol (ParserSym.MOD, yytext());
+    //return new token (constantes.MOD, yytext(), yyline + 1, yycolumn - yylength() + 1, "modulo");
             } 
             // fall through
           case 73: break;
           case 22: 
             { yycolumn += yylength();    
-    return new token (constantes.MAX, yytext(), yyline + 1, yycolumn - yylength() + 1, "maximo");
+    return symbol (ParserSym.MAX, yytext());
+    //return new token (constantes.MAX, yytext(), yyline + 1, yycolumn - yylength() + 1, "maximo");
             } 
             // fall through
           case 74: break;
           case 23: 
             { yycolumn += yylength();    
-    return new token (constantes.MULTI, yytext(), yyline + 1, yycolumn - yylength() + 1, "multiplicacion");
+    return symbol (ParserSym.MULTI, yytext());
+    //return new token (constantes.MULTI, yytext(), yyline + 1, yycolumn - yylength() + 1, "multiplicacion");
             } 
             // fall through
           case 75: break;
           case 24: 
             { yycolumn += yylength();    
-    return new token (constantes.MIN, yytext(), yyline + 1, yycolumn - yylength() + 1, "minimi");
+    return symbol (ParserSym.MIN, yytext());
+    //return new token (constantes.MIN, yytext(), yyline + 1, yycolumn - yylength() + 1, "minimi");
             } 
             // fall through
           case 76: break;
           case 25: 
             { yycolumn += yylength();    
-    return new token (constantes.END, yytext(), yyline + 1, yycolumn - yylength() + 1, "end");
+    return symbol (ParserSym.END, yytext());
+    //return new token (constantes.END, yytext(), yyline + 1, yycolumn - yylength() + 1, "end");
             } 
             // fall through
           case 77: break;
           case 26: 
             { yycolumn += yylength();    
-    return new token (constantes.DIV, yytext(), yyline + 1, yycolumn - yylength() + 1, "divicion");
+    return symbol (ParserSym.DIV, yytext());
+    //return new token (constantes.DIV, yytext(), yyline + 1, yycolumn - yylength() + 1, "divicion");
             } 
             // fall through
           case 78: break;
           case 27: 
             { yycolumn += yylength();    
-    return new token (constantes.VAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "var");
+    return symbol (ParserSym.VAR, yytext());
+    //return new token (constantes.VAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "var");
             } 
             // fall through
           case 79: break;
           case 28: 
             { yycolumn += yylength();    
-    return new token (constantes.SUM, yytext(), yyline + 1, yycolumn - yylength() + 1, "suma");
+    return symbol (ParserSym.SUM, yytext());
+    //return new token (constantes.SUM, yytext(), yyline + 1, yycolumn - yylength() + 1, "suma");
             } 
             // fall through
           case 80: break;
           case 29: 
             { yycolumn += yylength();    
-    return new token (constantes.MODA, yytext(), yyline + 1, yycolumn - yylength() + 1, "moda");
+    return symbol (ParserSym.MODA, yytext());
+    //return new token (constantes.MODA, yytext(), yyline + 1, yycolumn - yylength() + 1, "moda");
             } 
             // fall through
           case 81: break;
           case 30: 
             { yycolumn += yylength();    
-    return new token (constantes.EXEC, yytext(), yyline + 1, yycolumn - yylength() + 1, "exec");
+    return symbol (ParserSym.EXEC, yytext());
+    //return new token (constantes.EXEC, yytext(), yyline + 1, yycolumn - yylength() + 1, "exec");
             } 
             // fall through
           case 82: break;
           case 31: 
             { yycolumn += yylength();    
-    return new token (constantes.EJEX, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeX");
+    return symbol (ParserSym.EJEX, yytext());
+    //return new token (constantes.EJEX, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeX");
             } 
             // fall through
           case 83: break;
           case 32: 
             { yycolumn += yylength();    
-    return new token (constantes.EJEY, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeY");
+    return symbol (ParserSym.EJEY, yytext());
+    //return new token (constantes.EJEY, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeY");
             } 
             // fall through
           case 84: break;
@@ -963,115 +1016,134 @@ public class lexEx1 {
           case 85: break;
           case 34: 
             { yycolumn += yylength();    
-    return new token (constantes.PRINT, yytext(), yyline + 1, yycolumn - yylength() + 1, "print");
+    return symbol (ParserSym.PRINT, yytext());
+    //return new token (constantes.PRINT, yytext(), yyline + 1, yycolumn - yylength() + 1, "print");
             } 
             // fall through
           case 86: break;
           case 35: 
             { yycolumn += yylength();    
-    return new token (constantes.MEDIA, yytext(), yyline + 1, yycolumn - yylength() + 1, "media");
+    return symbol (ParserSym.MEDIA, yytext());
+    //return new token (constantes.MEDIA, yytext(), yyline + 1, yycolumn - yylength() + 1, "media");
             } 
             // fall through
           case 87: break;
           case 36: 
             { yycolumn += yylength();    
-    return new token (constantes.LABEL, yytext(), yyline + 1, yycolumn - yylength() + 1, "label");
+    return symbol (ParserSym.LABEL, yytext());
+    //return new token (constantes.LABEL, yytext(), yyline + 1, yycolumn - yylength() + 1, "label");
             } 
             // fall through
           case 88: break;
           case 37: 
             { yycolumn += yylength();    
-    return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "double");
+    return symbol (ParserSym.DOUBLE, yytext());
+    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "double");
             } 
             // fall through
           case 89: break;
           case 38: 
             { yycolumn += yylength();    
-    return new token (constantes.COLUMN, yytext(), yyline + 1, yycolumn - yylength() + 1, "column");
+    return symbol (ParserSym.COLUMN, yytext());
+    //return new token (constantes.COLUMN, yytext(), yyline + 1, yycolumn - yylength() + 1, "column");
             } 
             // fall through
           case 90: break;
           case 39: 
             { yycolumn += yylength();    
-    return new token (constantes.CHAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "char");
+    return symbol (ParserSym.CHAR, yytext());
+    //return new token (constantes.CHAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "char");
             } 
             // fall through
           case 91: break;
           case 40: 
             { yycolumn += yylength();    
-    return new token (constantes.VALUES, yytext(), yyline + 1, yycolumn - yylength() + 1, "values");
+    return symbol (ParserSym.VALUES, yytext());
+    //return new token (constantes.VALUES, yytext(), yyline + 1, yycolumn - yylength() + 1, "values");
             } 
             // fall through
           case 92: break;
           case 41: 
             { yycolumn += yylength();    
-    return new token (constantes.TITULO, yytext(), yyline + 1, yycolumn - yylength() + 1, "titulo");
+    return symbol (ParserSym.TITULO, yytext());
+    //return new token (constantes.TITULO, yytext(), yyline + 1, yycolumn - yylength() + 1, "titulo");
             } 
             // fall through
           case 93: break;
           case 42: 
             { yycolumn += yylength();   
-    return new token (constantes.STAPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "START PROGRAM");
+    return symbol (ParserSym.STAPR, yytext());
+    //return new token (constantes.STAPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "START PROGRAM");
             } 
             // fall through
           case 94: break;
           case 43: 
             { yycolumn += yylength();    
-    return new token (constantes.MEDIANA, yytext(), yyline + 1, yycolumn - yylength() + 1, "mediana");
+    return symbol (ParserSym.MEDIANA, yytext());
+    //return new token (constantes.MEDIANA, yytext(), yyline + 1, yycolumn - yylength() + 1, "mediana");
             } 
             // fall through
           case 95: break;
           case 44: 
             { yycolumn += yylength();    
-    return new token (constantes.CONSOLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "console");
+    return symbol (ParserSym.CONSOLE, yytext());
+    //return new token (constantes.CONSOLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "console");
             } 
             // fall through
           case 96: break;
           case 45: 
             { yycolumn += yylength();    
-    return new token (constantes.TITULOX, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloX");
+    return symbol (ParserSym.TITULOX, yytext());
+    //return new token (constantes.TITULOX, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloX");
             } 
             // fall through
           case 97: break;
           case 46: 
             { yycolumn += yylength();    
-    return new token (constantes.TITULOY, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloY");
+    return symbol (ParserSym.TITULOY, yytext());
+    //return new token (constantes.TITULOY, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloY");
             } 
             // fall through
           case 98: break;
           case 47: 
             { yycolumn += yylength();    
-    return new token (constantes.GRAPHPIE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphPie");
+    return symbol (ParserSym.GRAPHPIE, yytext());
+    //return new token (constantes.GRAPHPIE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphPie");
             } 
             // fall through
           case 99: break;
           case 48: 
             { yycolumn += yylength();    
-    return new token (constantes.GRAPHBAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphBar");
+    return symbol (ParserSym.GRAPHBAR, yytext());
+    //return new token (constantes.GRAPHBAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphBar");
             } 
             // fall through
           case 100: break;
           case 49: 
             { yycolumn += yylength();    
-    return new token (constantes.VARIANZA, yytext(), yyline + 1, yycolumn - yylength() + 1, "varianza");
+    return symbol (ParserSym.VARIANZA, yytext());
+    //return new token (constantes.VARIANZA, yytext(), yyline + 1, yycolumn - yylength() + 1, "varianza");
             } 
             // fall through
           case 101: break;
           case 50: 
             { yycolumn += yylength();    
-    return new token (constantes.GRAPHLINE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphLine");
+    return symbol (ParserSym.GRAPHLINE, yytext());
+    //return new token (constantes.GRAPHLINE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphLine");
             } 
             // fall through
           case 102: break;
           case 51: 
             { yycolumn += yylength();    
-    return new token (constantes.HISTOGRAM, yytext(), yyline + 1, yycolumn - yylength() + 1, "Histogram");
+    return symbol (ParserSym.HISTOGRAM, yytext());
+    //return new token (constantes.HISTOGRAM, yytext(), yyline + 1, yycolumn - yylength() + 1, "Histogram");
             } 
             // fall through
           case 103: break;
           case 52: 
             { yycolumn += yylength();  
-    return new token (constantes.ENDPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "END PROGRAM");
+    return symbol (ParserSym.ENDPR, yytext());
+    //return new token (constantes.ENDPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "END PROGRAM");
             } 
             // fall through
           case 104: break;

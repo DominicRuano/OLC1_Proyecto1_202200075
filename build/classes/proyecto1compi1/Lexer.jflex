@@ -2,11 +2,12 @@ package proyecto1compi1;
 
 import java.io.*;
 import java.util.ArrayList;
+import java_cup.runtime.*;
 
 %%
 %public
 %class lexEx1
-%function next_token
+%cup
 %unicode
 %ignorecase
 
@@ -24,154 +25,210 @@ comentario = "!"[^\r\n]*
 comentarios = [<][!][^!]*[!]+([^/*][^*]*[*]+)*[>]
 string = \"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"
 
-%type token
 %eofval{
-	return new token(constantes.EOF,null, -1,-1, null);
+	return symbol(constantes.EOF);
 %eofval}
+%{
+    StringBuffer string = new StringBuffer();
+
+    private Symbol symbol(int type){
+            return new Symbol(type, yyline, yycolumn);
+    }
+    private Symbol symbol(int type, Object value){
+            return new Symbol(type, yyline, yycolumn, value);
+    }
+%}
 %%
 
 
 
 <YYINITIAL> {string} {yycolumn += yylength();   
-    return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
+    return symbol(ParserSym.STR, yytext());
+    //return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
 }
 <YYINITIAL> {inicio} {yycolumn += yylength();   
-    return new token (constantes.STAPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "START PROGRAM");
+    return symbol (ParserSym.STAPR, yytext());
+    //return new token (constantes.STAPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "START PROGRAM");
 }
 <YYINITIAL> {fin} {yycolumn += yylength();  
-    return new token (constantes.ENDPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "END PROGRAM");
+    return symbol (ParserSym.ENDPR, yytext());
+    //return new token (constantes.ENDPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "END PROGRAM");
 }
 <YYINITIAL> {digito}{punto}{digito} {yycolumn += yylength();    
-    return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
+    return symbol (ParserSym.DOUBLE, yytext());
+    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
 }
 <YYINITIAL> "<-" {yycolumn += yylength();   
-    return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
+    return symbol (ParserSym.ASIG, yytext());
+    //return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
 }
 <YYINITIAL> "->" {yycolumn += yylength();   
-    return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
+    return symbol (ParserSym.POINTER, yytext());
+    //return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
 }
 <YYINITIAL> "=" {yycolumn += yylength();    
-    return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
+    return symbol (ParserSym.IG, yytext());
+    //return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
 }
 <YYINITIAL> ":" {yycolumn += yylength();    
-    return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
+    return symbol (ParserSym.DP, yytext());
+    //return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
 }
 <YYINITIAL> ";" {yycolumn += yylength();    
-    return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
+    return symbol (ParserSym.PYC, yytext());
+    //return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
 }
 <YYINITIAL> "(" {yycolumn += yylength();    
-    return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
+    return symbol (ParserSym.PA, yytext());
+    //return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
 }
 <YYINITIAL> ")" {yycolumn += yylength();    
-    return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
+    return symbol (ParserSym.PC, yytext());
+    //return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
 }
 <YYINITIAL> "," {yycolumn += yylength();    
-    return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
+    return symbol (ParserSym.COMA, yytext());
+    //return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
 }
 <YYINITIAL> "@" {yycolumn += yylength();    
-    return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
+    return symbol (ParserSym.ARROBA, yytext());
+    //return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
 }
 <YYINITIAL> "[" {yycolumn += yylength();    
-    return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
+    return symbol (ParserSym.CA, yytext());
+    //return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
 }
 <YYINITIAL> "]" {yycolumn += yylength();    
-    return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
+    return symbol (ParserSym.CC, yytext());
+    //return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
 }
 <YYINITIAL> "char[]" {yycolumn += yylength();    
-    return new token (constantes.CHAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "char");
+    return symbol (ParserSym.CHAR, yytext());
+    //return new token (constantes.CHAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "char");
 }
 <YYINITIAL> "var" {yycolumn += yylength();    
-    return new token (constantes.VAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "var");
+    return symbol (ParserSym.VAR, yytext());
+    //return new token (constantes.VAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "var");
 }
 <YYINITIAL> "double" {yycolumn += yylength();    
-    return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "double");
+    return symbol (ParserSym.DOUBLE, yytext());
+    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "double");
 }
 <YYINITIAL> "arr" {yycolumn += yylength();    
-    return new token (constantes.ARR, yytext(), yyline + 1, yycolumn - yylength() + 1, "arr");
+    return symbol (ParserSym.ARR, yytext());
+    //return new token (constantes.ARR, yytext(), yyline + 1, yycolumn - yylength() + 1, "arr");
 }
 <YYINITIAL> "end" {yycolumn += yylength();    
-    return new token (constantes.END, yytext(), yyline + 1, yycolumn - yylength() + 1, "end");
+    return symbol (ParserSym.END, yytext());
+    //return new token (constantes.END, yytext(), yyline + 1, yycolumn - yylength() + 1, "end");
 }
 <YYINITIAL> "sum" {yycolumn += yylength();    
-    return new token (constantes.SUM, yytext(), yyline + 1, yycolumn - yylength() + 1, "suma");
+    return symbol (ParserSym.SUM, yytext());
+    //return new token (constantes.SUM, yytext(), yyline + 1, yycolumn - yylength() + 1, "suma");
 }
 <YYINITIAL> "res" {yycolumn += yylength();    
-    return new token (constantes.RES, yytext(), yyline + 1, yycolumn - yylength() + 1, "resta");
+    return symbol (ParserSym.RES, yytext());
+    //return new token (constantes.RES, yytext(), yyline + 1, yycolumn - yylength() + 1, "resta");
 }
 <YYINITIAL> "mul" {yycolumn += yylength();    
-    return new token (constantes.MULTI, yytext(), yyline + 1, yycolumn - yylength() + 1, "multiplicacion");
+    return symbol (ParserSym.MULTI, yytext());
+    //return new token (constantes.MULTI, yytext(), yyline + 1, yycolumn - yylength() + 1, "multiplicacion");
 }
 <YYINITIAL> "div" {yycolumn += yylength();    
-    return new token (constantes.DIV, yytext(), yyline + 1, yycolumn - yylength() + 1, "divicion");
+    return symbol (ParserSym.DIV, yytext());
+    //return new token (constantes.DIV, yytext(), yyline + 1, yycolumn - yylength() + 1, "divicion");
 }
 <YYINITIAL> "mod" {yycolumn += yylength();    
-    return new token (constantes.MOD, yytext(), yyline + 1, yycolumn - yylength() + 1, "modulo");
+    return symbol (ParserSym.MOD, yytext());
+    //return new token (constantes.MOD, yytext(), yyline + 1, yycolumn - yylength() + 1, "modulo");
 }
 <YYINITIAL> "media" {yycolumn += yylength();    
-    return new token (constantes.MEDIA, yytext(), yyline + 1, yycolumn - yylength() + 1, "media");
+    return symbol (ParserSym.MEDIA, yytext());
+    //return new token (constantes.MEDIA, yytext(), yyline + 1, yycolumn - yylength() + 1, "media");
 }
 <YYINITIAL> "mediana" {yycolumn += yylength();    
-    return new token (constantes.MEDIANA, yytext(), yyline + 1, yycolumn - yylength() + 1, "mediana");
+    return symbol (ParserSym.MEDIANA, yytext());
+    //return new token (constantes.MEDIANA, yytext(), yyline + 1, yycolumn - yylength() + 1, "mediana");
 }
 <YYINITIAL> "moda" {yycolumn += yylength();    
-    return new token (constantes.MODA, yytext(), yyline + 1, yycolumn - yylength() + 1, "moda");
+    return symbol (ParserSym.MODA, yytext());
+    //return new token (constantes.MODA, yytext(), yyline + 1, yycolumn - yylength() + 1, "moda");
 }
 <YYINITIAL> "varianza" {yycolumn += yylength();    
-    return new token (constantes.VARIANZA, yytext(), yyline + 1, yycolumn - yylength() + 1, "varianza");
+    return symbol (ParserSym.VARIANZA, yytext());
+    //return new token (constantes.VARIANZA, yytext(), yyline + 1, yycolumn - yylength() + 1, "varianza");
 }
 <YYINITIAL> "max" {yycolumn += yylength();    
-    return new token (constantes.MAX, yytext(), yyline + 1, yycolumn - yylength() + 1, "maximo");
+    return symbol (ParserSym.MAX, yytext());
+    //return new token (constantes.MAX, yytext(), yyline + 1, yycolumn - yylength() + 1, "maximo");
 }
 <YYINITIAL> "min" {yycolumn += yylength();    
-    return new token (constantes.MIN, yytext(), yyline + 1, yycolumn - yylength() + 1, "minimi");
+    return symbol (ParserSym.MIN, yytext());
+    //return new token (constantes.MIN, yytext(), yyline + 1, yycolumn - yylength() + 1, "minimi");
 }
 <YYINITIAL> "console" {yycolumn += yylength();    
-    return new token (constantes.CONSOLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "console");
+    return symbol (ParserSym.CONSOLE, yytext());
+    //return new token (constantes.CONSOLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "console");
 }
 <YYINITIAL> "print" {yycolumn += yylength();    
-    return new token (constantes.PRINT, yytext(), yyline + 1, yycolumn - yylength() + 1, "print");
+    return symbol (ParserSym.PRINT, yytext());
+    //return new token (constantes.PRINT, yytext(), yyline + 1, yycolumn - yylength() + 1, "print");
 }
 <YYINITIAL> "column" {yycolumn += yylength();    
-    return new token (constantes.COLUMN, yytext(), yyline + 1, yycolumn - yylength() + 1, "column");
+    return symbol (ParserSym.COLUMN, yytext());
+    //return new token (constantes.COLUMN, yytext(), yyline + 1, yycolumn - yylength() + 1, "column");
 }
 <YYINITIAL> "exec" {yycolumn += yylength();    
-    return new token (constantes.EXEC, yytext(), yyline + 1, yycolumn - yylength() + 1, "exec");
+    return symbol (ParserSym.EXEC, yytext());
+    //return new token (constantes.EXEC, yytext(), yyline + 1, yycolumn - yylength() + 1, "exec");
 }
 <YYINITIAL> "graphBar" {yycolumn += yylength();    
-    return new token (constantes.GRAPHBAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphBar");
+    return symbol (ParserSym.GRAPHBAR, yytext());
+    //return new token (constantes.GRAPHBAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphBar");
 }
 <YYINITIAL> "titulo" {yycolumn += yylength();    
-    return new token (constantes.TITULO, yytext(), yyline + 1, yycolumn - yylength() + 1, "titulo");
+    return symbol (ParserSym.TITULO, yytext());
+    //return new token (constantes.TITULO, yytext(), yyline + 1, yycolumn - yylength() + 1, "titulo");
 }
 <YYINITIAL> "ejeX" {yycolumn += yylength();    
-    return new token (constantes.EJEX, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeX");
+    return symbol (ParserSym.EJEX, yytext());
+    //return new token (constantes.EJEX, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeX");
 }
 <YYINITIAL> "ejeY" {yycolumn += yylength();    
-    return new token (constantes.EJEY, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeY");
+    return symbol (ParserSym.EJEY, yytext());
+    //return new token (constantes.EJEY, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeY");
 }
 <YYINITIAL> "tituloX" {yycolumn += yylength();    
-    return new token (constantes.TITULOX, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloX");
+    return symbol (ParserSym.TITULOX, yytext());
+    //return new token (constantes.TITULOX, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloX");
 }
 <YYINITIAL> "tituloY" {yycolumn += yylength();    
-    return new token (constantes.TITULOY, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloY");
+    return symbol (ParserSym.TITULOY, yytext());
+    //return new token (constantes.TITULOY, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloY");
 }
 <YYINITIAL> "label" {yycolumn += yylength();    
-    return new token (constantes.LABEL, yytext(), yyline + 1, yycolumn - yylength() + 1, "label");
+    return symbol (ParserSym.LABEL, yytext());
+    //return new token (constantes.LABEL, yytext(), yyline + 1, yycolumn - yylength() + 1, "label");
 }
 <YYINITIAL> "values" {yycolumn += yylength();    
-    return new token (constantes.VALUES, yytext(), yyline + 1, yycolumn - yylength() + 1, "values");
+    return symbol (ParserSym.VALUES, yytext());
+    //return new token (constantes.VALUES, yytext(), yyline + 1, yycolumn - yylength() + 1, "values");
 }
 <YYINITIAL> "graphPie" {yycolumn += yylength();    
-    return new token (constantes.GRAPHPIE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphPie");
+    return symbol (ParserSym.GRAPHPIE, yytext());
+    //return new token (constantes.GRAPHPIE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphPie");
 }
 <YYINITIAL> "graphLine" {yycolumn += yylength();    
-    return new token (constantes.GRAPHLINE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphLine");
+    return symbol (ParserSym.GRAPHLINE, yytext());
+    //return new token (constantes.GRAPHLINE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphLine");
 }
 <YYINITIAL> "Histogram" {yycolumn += yylength();    
-    return new token (constantes.HISTOGRAM, yytext(), yyline + 1, yycolumn - yylength() + 1, "Histogram");
+    return symbol (ParserSym.HISTOGRAM, yytext());
+    //return new token (constantes.HISTOGRAM, yytext(), yyline + 1, yycolumn - yylength() + 1, "Histogram");
 }
 <YYINITIAL> {letra}({letra}|{digito})* {yycolumn += yylength(); 
-    return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
+    return symbol (ParserSym.ID, yytext());
+    //return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
 }
 
 \n {
@@ -191,5 +248,6 @@ string = \"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"
 }
 
 . {yycolumn += yylength();  
-    return new token(constantes.UKN, yytext(), yyline, yycolumn, "ERROR LEXICO");
+/* ignora se debe agregar una forma de recoger todos los errores mas adelante. */
+    //return new token(constantes.UKN, yytext(), yyline, yycolumn, "ERROR LEXICO");
 }

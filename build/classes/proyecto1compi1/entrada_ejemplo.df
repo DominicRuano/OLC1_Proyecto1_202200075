@@ -1,0 +1,120 @@
+PROGRAM
+	! Variables
+	var:double:: notaAprobar <- 61 end;
+	var:char[]:: labelAprobar <- "Nota Minima" end;
+	
+	! Arreglos
+	arr:double:: @notas <- [notaAprobar, MUL(75, 0.45), DIV(SUM(80,20), RES(75,25))] end;
+	arr:char[]:: @labels <- [labelAprobar, "P1", "P2"] end;
+	
+	!Prints
+	var:char[]:: titulo1 <- "Titulo histograma" end;
+	console::column = "test" -> [10, 15.5, 61.1] end;
+	console::column = "Notas" -> @notas end;
+	console::column = titulo1 -> @labels end;
+	
+	console::print = "Media", "Mediana", "Moda", "Varianza", "Max", "Min" end;
+	console::print = Media(@notas), Mediana(@notas), Moda(@notas), Varianza(@notas), Max(@notas), Min(@notas) end;
+	console::print = "Hola Mundo", MOD(10, 9), notaAprobar, labelAprobar end;
+	
+	<! FELICIDADES
+		Lo de arriba ya es medio proyecto
+		Tu puedes !>
+	
+	var:double:: gb1 <- 61 end;
+	var:char[]:: gbt <- "Datos" end;
+	graphBar(
+		!grafica 1
+		tituloX::char[] = "Actividades" end;
+		tituloY::char[] = gbt end;
+		titulo::char[] = "Estudiantes" end;
+		ejeX::char[] = ["1 Parcial", "2 parcial", "Final"] end;
+		ejeY::double = [gb1, 30, 70] end;
+		EXEC graphBar end;
+	) end;
+	
+	graphPie(
+		<! FELICIDADES
+		La de pie es facil !>
+	
+		label::char[] = ["Uno", "Dos", "Tres"] end;
+		titulo::char[] = "Ejemplo Gráfica de Pie" end;
+		values::double = [50, 30, 20] end;
+		EXEC graphPie end;
+	) end;
+
+	graphPie(
+		label::char[] = ["p1", "p2", "p3", "p4"] end;
+		titulo::char[] = "EJEMPLO" end;
+		values::double = [30, 30, 25, 15] end;
+		EXEC graphPie end;
+	) end;
+	
+	graphLine(
+	!testing de variables en graficas
+		titulo::char[] = "Gráfica de Línea" end;
+		ejeX::char[] = @labels end;
+		ejeY::double = @notas end;
+		tituloX::char[] = "Actividades" end;
+		tituloY::char[] = "Notas" end;
+		EXEC graphLine end;
+	) end;
+	
+	Histogram(
+		titulo::char[] = titulo1 end;
+		values::double = [2,2,2,5,5,7,8] end;
+		EXEC Histogram end;
+	) end;
+	
+	Histogram(
+		titulo::char[] = "prueba 1" end;
+		values::double = [2,2,2,1,43,2,3,5,5,7,8] end;
+		EXEC Histogram end;
+	) end;
+
+	Histogram(
+		titulo::char[] = "prueba 2" end;
+		values::double = [2,2,2,3,3,4,32,4,5,5,7,8] end;
+		EXEC Histogram end;
+	) end;
+
+<! En las graficas los datos se declaran directamente o por medio de variables
+Buena suerte
+Deben generar todas las graficas en una ejecucion
+ !>
+ 
+ ! Estadísticas de Ingeniería en Guatemala
+	CONSOLE::PRINT = "-----------------ESTADÍSTICAS DE INGENIERÍA EN GUATEMALA-----------------" END;
+
+	<! Datos estadísticos !>
+	VAR:DOUBLE::ingenierosElectronicos <- 150.0 END;
+	VAR:DOUBLE::ingenierosMecanicos <- 120.0 END;
+	VAR:DOUBLE::ingenierosInformaticos <- 200.0 END;
+
+	CONSOLE::PRINT = "Ingenieros Electrónicos:", ingenierosElectronicos END;
+	CONSOLE::PRINT = "Ingenieros Mecánicos:", ingenierosMecanicos END;
+	CONSOLE::PRINT = "Ingenieros Informáticos:", ingenierosInformaticos END;
+
+	VAR:DOUBLE::totalIngenieros <- SUM(SUM(ingenierosElectronicos, ingenierosMecanicos), ingenierosInformaticos) END;
+	CONSOLE::PRINT = "Total de Ingenieros:", totalIngenieros END;
+
+	CONSOLE::COLUMN = "Número de Ingenieros por Especialidad en Guatemala" -> [ingenierosElectronicos, ingenierosMecanicos, ingenierosInformaticos] END;
+	<!
+		--------------------------------------------
+		Número de Ingenieros por Especialidad en Guatemala
+		--------------------------------------------
+		Ingenieros Electrónicos: 150.0
+		Ingenieros Mecánicos: 120.0
+		Ingenieros Informáticos: 200.0
+		Total de Ingenieros: 470.0
+	!>
+
+	graphPie(
+		label::char[] = ["Electrónicos", "Mecánicos", "Informáticos"] END;
+		values::DOUBLE = [ingenierosElectronicos, ingenierosMecanicos, ingenierosInformaticos] END;
+		titulo::char[] = "Número de Ingenieros por Especialidad en Guatemala" END;
+		EXEC graphPie END;
+	) end;
+
+
+END PROGRAM

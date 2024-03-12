@@ -1,0 +1,46 @@
+PROGRAM
+	<!
+		Operaciones aritmeticas
+		y variables simples
+	!>
+	var:double::numero1 <- 250 end; ! Declaracion simple
+	var:double::numero2 <- DIV(SuM(3,1),2) end; ! esto debe ser 2
+	var:char[]::cadena <- "Ejemplo P1 OLC1" end;
+	
+	console::print = cadena, "Si sale", numero1, numero2 end;
+	! salida en consola: Ejemplo P1 OLC1, Si sale, 250, 2
+	
+	<!
+		Arreglos y operaciones
+		Estadisticas
+	!>
+	
+	arr:double::@notas <- [50, 60, 80] end;
+	arr:char[]::@titulos <- ["Parcial 1", "Parcial 2", "Final"] end;
+	
+	console::column = "Mis notas" -> @notas end;
+	<!
+		----------
+		Mis notas
+		----------
+		50
+		60
+		80
+	!>
+	
+	console::print = "Mejor nota", Max(@notas) end;
+	! salida en consola: Mejor nota, 80
+	
+	console::print = "Mi promedio", Media(@notas) end;
+	! salida en consola: "Mi promedio",63.3333
+	
+	! Grafica de linea
+	graphLine(
+		titulo::char[] = "Mis notas" end;
+		ejeY::double = @notas end;
+		tituloX::char[] = "Actividades" end;
+		tituloY::char[] = "Notas" end;
+		ejeX::char[] = @titulos end;
+		EXEC graphLine end;
+	)end;
+END PROGRAM
