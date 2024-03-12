@@ -6,6 +6,11 @@ package proyecto1compi1;
 
 import javax.swing.*;
 import java.io.*;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,7 +19,6 @@ import java.io.*;
 public class Main extends javax.swing.JFrame {
 
     private Objeto miObjeto = new Objeto();
-    private int contadorArchivosNuevos = 0;
 
     /**
      * Creates new form Main
@@ -164,11 +168,17 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton3.setText("Ejecutar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Reportes");
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTextArea3.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
@@ -263,6 +273,36 @@ public class Main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("----- Ejemplo 1 -----");
+        int selectedIndex = jTabbedPane1.getSelectedIndex();
+        String analisis = "";
+        if (selectedIndex != -1) {
+            JScrollPane scrollPane = (JScrollPane) jTabbedPane1.getComponentAt(selectedIndex);
+            JViewport viewport = scrollPane.getViewport();
+            JTextArea textArea = (JTextArea) viewport.getView();
+            String contenido = textArea.getText();
+            Reader sr = new StringReader(contenido);
+            lexEx1 lx = new lexEx1(sr);
+
+            token tk;
+            try {
+                tk = lx.next_token();
+                while (tk.getLexema() != null) {
+                    analisis += "Se detecto: Token = " + tk.gettokenType()+"\t| ER = "+ tk.getER() + "\t| Linea = " + tk.getLine()+  "\t| Columna = " + tk.getColumn() + "\t| Lexema = \"" + tk.getLexema() + "\"\n";
+                    tk = lx.next_token();
+                }
+                jTextArea3.setEditable(true);
+                jTextArea3.setText(analisis);
+                jTextArea3.setEditable(false);
+                System.out.println("----- Fin ejemplo 1 -----");
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

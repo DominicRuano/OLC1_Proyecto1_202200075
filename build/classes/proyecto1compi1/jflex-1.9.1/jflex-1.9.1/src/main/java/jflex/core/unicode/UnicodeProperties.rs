@@ -1,0 +1,2 @@
+jflex.core.unicode.UnicodeProperties$UnsupportedUnicodeVersionException
+jflex.core.unicode.UnicodeProperties

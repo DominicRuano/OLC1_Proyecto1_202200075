@@ -1,0 +1,11 @@
+jflex.gui.MainFrame$9
+jflex.gui.MainFrame$10
+jflex.gui.MainFrame$8
+jflex.gui.MainFrame$7
+jflex.gui.MainFrame$6
+jflex.gui.MainFrame$1
+jflex.gui.MainFrame$5
+jflex.gui.MainFrame$4
+jflex.gui.MainFrame$3
+jflex.gui.MainFrame$2
+jflex.gui.MainFrame
