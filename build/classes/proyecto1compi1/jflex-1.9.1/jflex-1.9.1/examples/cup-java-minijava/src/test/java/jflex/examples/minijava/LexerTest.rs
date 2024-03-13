@@ -1,1 +1,0 @@
-jflex.examples.minijava.LexerTest

@@ -5,11 +5,43 @@ import java_cup.sym;
 
 class Parser;
 
-terminal IG, UKN, STR, STAPR, ENDPR, DP, PYC, END, ASIG, PA, PC, COMA, ARROBA, CA, CC, POINTER, CHAR, VAR, ARR, SUM, RES, DIV, MULTI, MOD, MEDIA, MEDIANA,MODA, VARIANZA, MIN, MAX, CONSOLE, PRINT, EXEC, EJEX, EJEY, LABEL, COLUMN, VALUES, TITULO, TITULOX, TITULOY, GRAPHPIE, GRAPHBAR, GRAPHLINE, HISTOGRAM, DOUBLE, ID;
+terminal IG, UKN, STR, STAPR, ENDPR, DP, PYC, END, ASIG, PA, PC, COMA, ARROBA, CA, CC, POINTER, CHAR, VAR, ARR, SUM, RES, DIV;
+terminal MULTI, MOD, MEDIA, MEDIANA,MODA, VARIANZA, MIN, MAX, CONSOLE, PRINT, EXEC, EJEX, EJEY, LABEL, COLUMN, VALUES, TITULO;
+terminal TITULOX, TITULOY, GRAPHPIE, GRAPHBAR, GRAPHLINE, HISTOGRAM, DOUBLE, ID, DOUBLENUM;
 
-non terminal L;
+non terminal L, CODIGOS, CODIGO, DECLARACION, LISTAVALORESSTR, LISTAVALORESDOUBLE , LISTADOUBLE, LISTASTR, IMPRIMIR, EXP, EXPS;
 
 start with L;
 
-L ::= L COMA DOUBLE
-        |DOUBLE ;
+L ::= STAPR CODIGOS ENDPR;
+
+CODIGOS ::=  CODIGOS CODIGO
+    | CODIGO;
+
+CODIGO ::= DECLARACION
+    |IMPRIMIR;
+
+IMPRIMIR ::= CONSOLE DP DP PRINT IG EXPS:var END PYC {: Main.jTextArea3.append(var.toString()replace("\"", "") + "\n"); :};
+
+EXPS ::= EXPS:expresiones COMA EXP:exp {: RESULT = expresiones + ", " + exp;  :}
+    | EXP:exp {: RESULT = exp; :};
+
+EXP ::= ID:id {: RESULT = Main.miObjeto.obtenerDelMapa(id.toString()); :}
+    | STR:str {: RESULT = str; :}
+    | DOUBLENUM:num {: RESULT = num; :};
+
+
+DECLARACION ::= VAR DP CHAR DP DP ID:name ASIG STR:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
+    |VAR DP DOUBLE DP DP ID:name ASIG DOUBLENUM:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
+    |ARR DP CHAR DP DP ARROBA ID:name ASIG LISTAVALORESSTR:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
+    |ARR DP DOUBLE DP DP ARROBA ID:name ASIG LISTAVALORESDOUBLE:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :};
+
+LISTAVALORESSTR ::= CA LISTASTR:lst CC {: RESULT = lst; :};
+LISTAVALORESDOUBLE ::= CA LISTADOUBLE:lst CC {: RESULT = lst; :};
+
+
+LISTASTR ::= LISTASTR:lista COMA STR:str {: RESULT = lista + ", " + str; :}
+    | STR:str {: RESULT = str; :};
+
+LISTADOUBLE ::= LISTADOUBLE:lista COMA DOUBLENUM:num {: RESULT = lista + ", " + num; :}
+    | DOUBLENUM:num {: RESULT = num; :};

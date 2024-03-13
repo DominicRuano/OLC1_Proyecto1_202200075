@@ -1,1 +1,0 @@
-jflex.core.RegExp2

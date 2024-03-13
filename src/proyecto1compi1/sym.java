@@ -6,7 +6,7 @@
 package proyecto1compi1;
 
 /** CUP generated class containing symbol constants. */
-public class ParserSym {
+public class sym {
   /* terminals */
   public static final int CHAR = 18;
   public static final int STR = 4;
@@ -23,7 +23,6 @@ public class ParserSym {
   public static final int EJEY = 36;
   public static final int EJEX = 35;
   public static final int COLUMN = 38;
-  public static final int DOUBLENUM = 49;
   public static final int ARROBA = 14;
   public static final int TITULO = 40;
   public static final int DIV = 23;
@@ -107,8 +106,7 @@ public class ParserSym {
   "GRAPHLINE",
   "HISTOGRAM",
   "DOUBLE",
-  "ID",
-  "DOUBLENUM"
+  "ID"
   };
 }
 

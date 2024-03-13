@@ -1,2 +1,0 @@
-jflex.core.unicode.CharClassesGen$UnicodePropertiesSupplier
-jflex.core.unicode.CharClassesGen

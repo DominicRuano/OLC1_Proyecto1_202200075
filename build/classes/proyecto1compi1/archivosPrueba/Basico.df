@@ -1,0 +1,22 @@
+PROGRAM
+	var:char[]::cadena1 <- "Ejemplo P1 OLC1" end;
+	var:double::cadena2 <- 200.0 end;
+	var:char[]:: cadena3 <- "Ejemplo P1 OLC1" end;
+	var:double:: cadena4 <- 200 end;
+
+	aRr:char[]::@cadena5 <- ["hola", "mundo"] end;
+	arr:double::@cadena6 <- [23, 3] end;
+	arr:char[]:: @cadena7 <- ["hola", "mundo"] end;
+	arr:double:: @cadena8 <- [23, 3] end;
+
+	console::print = 23, 45, cadena1 end;
+	console::print = cadena5, cadena6 end;
+	! Declaracion simple
+
+	<!
+
+es to es un comentario multilinea
+		Salida en consola:
+			Ejemplo, OLC, 1, 2024
+	!>
+END PROGRAM

@@ -59,27 +59,27 @@ public class lexEx1 implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\1\1\2\1\1\1\2\10\3\1\4\1\5\3\2"+
-    "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-    "\1\16\4\3\1\2\2\3\2\0\10\3\1\0\5\3"+
-    "\1\0\1\3\1\0\1\17\1\0\1\20\1\0\1\21"+
-    "\2\3\1\0\3\3\1\0\1\3\1\0\1\3\1\22"+
-    "\1\3\1\0\1\3\2\23\1\3\1\24\1\25\1\26"+
-    "\1\3\1\27\2\30\1\31\3\3\2\32\2\0\3\3"+
-    "\1\0\1\3\1\33\2\3\2\34\1\0\2\3\1\0"+
-    "\2\3\1\35\1\0\1\3\1\0\1\36\1\37\1\40"+
-    "\1\3\2\0\1\41\1\0\3\3\1\0\1\3\1\0"+
-    "\3\3\1\0\2\3\2\42\1\3\2\43\1\0\1\3"+
-    "\2\0\2\3\2\0\1\3\1\0\2\3\1\44\1\0"+
-    "\5\3\1\0\1\3\1\0\1\45\1\0\1\3\1\46"+
-    "\1\47\1\0\1\3\1\0\1\3\2\50\2\51\1\52"+
-    "\1\0\2\3\1\0\1\3\2\53\1\0\2\54\1\0"+
-    "\1\3\1\0\1\3\1\55\1\56\1\55\1\56\2\57"+
-    "\1\60\1\0\1\3\2\0\1\3\2\61\2\62\1\0"+
-    "\2\63\1\0\1\64";
+    "\1\1\1\2\1\1\1\3\10\4\1\5\1\6\3\2"+
+    "\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
+    "\1\17\4\4\1\2\2\4\1\0\10\4\1\0\5\4"+
+    "\1\0\1\4\1\0\1\20\1\0\1\21\1\0\1\22"+
+    "\2\4\1\0\3\4\1\0\1\4\1\0\2\4\1\0"+
+    "\1\4\2\23\1\4\1\24\1\25\1\26\1\4\1\27"+
+    "\2\30\1\31\3\4\2\32\2\0\3\4\1\0\1\4"+
+    "\1\33\2\4\2\34\1\0\2\4\1\0\2\4\1\35"+
+    "\1\0\1\4\1\0\1\36\1\37\1\40\1\4\2\0"+
+    "\1\41\1\0\3\4\1\0\1\4\1\0\3\4\1\0"+
+    "\2\4\2\42\1\4\2\43\1\0\1\4\2\0\2\4"+
+    "\2\0\1\4\1\0\2\4\1\44\1\0\5\4\1\0"+
+    "\1\4\1\0\1\45\1\0\1\4\1\46\1\47\1\0"+
+    "\1\4\1\0\1\4\2\50\2\51\1\52\1\0\2\4"+
+    "\1\0\1\4\2\53\1\0\2\54\1\0\1\4\1\0"+
+    "\1\4\1\55\1\56\1\55\1\56\2\57\1\60\1\0"+
+    "\1\4\2\0\1\4\2\61\2\62\1\0\2\63\1\0"+
+    "\1\64";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[205];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -108,31 +108,31 @@ public class lexEx1 implements java_cup.runtime.Scanner {
     "\0\u0198\0\u01cb\0\u01fe\0\u0231\0\u0264\0\63\0\u0297\0\u02ca"+
     "\0\u02fd\0\63\0\63\0\63\0\63\0\63\0\63\0\63"+
     "\0\63\0\63\0\u0330\0\u0363\0\u0396\0\u03c9\0\u03fc\0\u042f"+
-    "\0\u0462\0\231\0\u0495\0\u04c8\0\u04fb\0\u052e\0\u0561\0\u0594"+
-    "\0\u05c7\0\u05fa\0\u062d\0\u0660\0\u0693\0\u06c6\0\u06f9\0\u072c"+
-    "\0\u075f\0\u0792\0\u07c5\0\u07f8\0\63\0\u02ca\0\63\0\u082b"+
-    "\0\63\0\u085e\0\u0891\0\u08c4\0\u08f7\0\u092a\0\u095d\0\u0990"+
-    "\0\u09c3\0\u09f6\0\u0a29\0\u0495\0\u0a5c\0\u0a8f\0\u0ac2\0\63"+
-    "\0\314\0\u0af5\0\314\0\u0b28\0\314\0\u0b5b\0\314\0\63"+
-    "\0\314\0\u0b8e\0\u0bc1\0\u0bf4\0\u0c27\0\63\0\314\0\u0c5a"+
-    "\0\u0c8d\0\u0cc0\0\u0cf3\0\u0d26\0\u0d59\0\u0d8c\0\u0dbf\0\u0df2"+
-    "\0\u0e25\0\63\0\314\0\u0e58\0\u0e8b\0\u0ebe\0\u0ef1\0\u0f24"+
-    "\0\u0f57\0\314\0\u0f8a\0\u0fbd\0\u0ff0\0\314\0\314\0\314"+
-    "\0\u1023\0\u1056\0\u1089\0\u1056\0\u10bc\0\u10ef\0\u1122\0\u1155"+
-    "\0\u1188\0\u11bb\0\u11ee\0\u1221\0\u1254\0\u1287\0\u12ba\0\u12ed"+
-    "\0\u1320\0\63\0\314\0\u1353\0\u1386\0\u13b9\0\u13ec\0\u141f"+
-    "\0\u1452\0\u1485\0\u14b8\0\u14eb\0\u151e\0\u1551\0\u1584\0\u15b7"+
-    "\0\u15ea\0\u161d\0\314\0\u1650\0\u1683\0\u16b6\0\u16e9\0\u171c"+
-    "\0\u174f\0\u1782\0\u17b5\0\u17e8\0\314\0\u181b\0\u184e\0\314"+
-    "\0\63\0\u1881\0\u18b4\0\u18e7\0\u191a\0\63\0\314\0\u194d"+
-    "\0\u1980\0\314\0\u19b3\0\u19e6\0\u1a19\0\u1a4c\0\u1a7f\0\63"+
-    "\0\314\0\u1ab2\0\63\0\314\0\u1ae5\0\u1b18\0\u1b4b\0\u1b7e"+
-    "\0\63\0\63\0\314\0\314\0\63\0\314\0\314\0\u1bb1"+
-    "\0\u1be4\0\u1c17\0\u1c4a\0\u1c7d\0\63\0\314\0\63\0\314"+
-    "\0\u1cb0\0\63\0\314\0\u1ce3\0\63";
+    "\0\u0462\0\u0495\0\u04c8\0\u04fb\0\u052e\0\u0561\0\u0594\0\u05c7"+
+    "\0\u05fa\0\u062d\0\u0660\0\u0693\0\u06c6\0\u06f9\0\u072c\0\u075f"+
+    "\0\u0792\0\u07c5\0\u07f8\0\63\0\u02ca\0\63\0\u082b\0\63"+
+    "\0\u085e\0\u0891\0\u08c4\0\u08f7\0\u092a\0\u095d\0\u0990\0\u09c3"+
+    "\0\u09f6\0\u0a29\0\u0a5c\0\u0a8f\0\u0ac2\0\63\0\314\0\u0af5"+
+    "\0\314\0\u0b28\0\314\0\u0b5b\0\314\0\63\0\314\0\u0b8e"+
+    "\0\u0bc1\0\u0bf4\0\u0c27\0\63\0\314\0\u0c5a\0\u0c8d\0\u0cc0"+
+    "\0\u0cf3\0\u0d26\0\u0d59\0\u0d8c\0\u0dbf\0\u0df2\0\u0e25\0\63"+
+    "\0\314\0\u0e58\0\u0e8b\0\u0ebe\0\u0ef1\0\u0f24\0\u0f57\0\314"+
+    "\0\u0f8a\0\u0fbd\0\u0ff0\0\314\0\314\0\314\0\u1023\0\u1056"+
+    "\0\u1089\0\u1056\0\u10bc\0\u10ef\0\u1122\0\u1155\0\u1188\0\u11bb"+
+    "\0\u11ee\0\u1221\0\u1254\0\u1287\0\u12ba\0\u12ed\0\u1320\0\63"+
+    "\0\314\0\u1353\0\u1386\0\u13b9\0\u13ec\0\u141f\0\u1452\0\u1485"+
+    "\0\u14b8\0\u14eb\0\u151e\0\u1551\0\u1584\0\u15b7\0\u15ea\0\u161d"+
+    "\0\314\0\u1650\0\u1683\0\u16b6\0\u16e9\0\u171c\0\u174f\0\u1782"+
+    "\0\u17b5\0\u17e8\0\314\0\u181b\0\u184e\0\314\0\63\0\u1881"+
+    "\0\u18b4\0\u18e7\0\u191a\0\63\0\314\0\u194d\0\u1980\0\314"+
+    "\0\u19b3\0\u19e6\0\u1a19\0\u1a4c\0\u1a7f\0\63\0\314\0\u1ab2"+
+    "\0\63\0\314\0\u1ae5\0\u1b18\0\u1b4b\0\u1b7e\0\63\0\63"+
+    "\0\314\0\314\0\63\0\314\0\314\0\u1bb1\0\u1be4\0\u1c17"+
+    "\0\u1c4a\0\u1c7d\0\63\0\314\0\63\0\314\0\u1cb0\0\63"+
+    "\0\314\0\u1ce3\0\63";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[205];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -161,159 +161,159 @@ public class lexEx1 implements java_cup.runtime.Scanner {
     "\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
     "\1\31\1\32\1\33\1\34\1\35\2\5\1\36\1\37"+
     "\1\40\1\2\3\5\1\41\2\5\64\0\1\3\14\0"+
-    "\1\3\2\0\1\3\7\0\1\3\33\0\1\42\1\0"+
-    "\1\43\60\0\2\5\1\0\11\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\2\0\2\5\1\0\1\5\1\44"+
+    "\1\3\2\0\1\3\7\0\1\3\33\0\1\4\1\0"+
+    "\1\42\60\0\2\5\1\0\11\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\2\0\2\5\1\0\1\5\1\43"+
     "\7\5\26\0\6\5\1\0\1\5\1\0\6\5\2\0"+
-    "\2\5\1\0\6\5\1\45\2\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\2\0\2\5\1\0\1\5\1\46"+
+    "\2\5\1\0\6\5\1\44\2\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\2\0\2\5\1\0\1\5\1\45"+
     "\7\5\26\0\6\5\1\0\1\5\1\0\6\5\2\0"+
-    "\2\5\1\0\1\5\1\47\7\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\2\0\2\5\1\0\2\5\1\50"+
-    "\1\5\1\51\1\5\1\52\2\5\26\0\3\5\1\53"+
-    "\2\5\1\0\1\5\1\54\1\55\5\5\2\0\2\5"+
-    "\1\0\7\5\1\56\1\5\26\0\6\5\1\0\1\5"+
-    "\1\0\2\5\1\57\1\5\1\60\1\5\2\0\2\5"+
-    "\1\0\2\5\1\61\6\5\26\0\6\5\1\0\1\5"+
-    "\1\62\1\63\5\5\20\15\2\0\41\15\17\0\1\64"+
-    "\12\0\1\65\30\0\26\66\1\67\1\70\33\66\25\0"+
-    "\1\71\37\0\2\5\1\0\2\5\1\72\6\5\26\0"+
-    "\1\5\1\73\4\5\1\0\1\5\1\0\6\5\2\0"+
-    "\2\5\1\0\11\5\26\0\6\5\1\0\1\5\1\74"+
-    "\1\75\5\5\2\0\2\5\1\0\4\5\1\76\4\5"+
+    "\2\5\1\0\1\5\1\46\7\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\2\0\2\5\1\0\2\5\1\47"+
+    "\1\5\1\50\1\5\1\51\2\5\26\0\3\5\1\52"+
+    "\2\5\1\0\1\5\1\53\1\54\5\5\2\0\2\5"+
+    "\1\0\7\5\1\55\1\5\26\0\6\5\1\0\1\5"+
+    "\1\0\2\5\1\56\1\5\1\57\1\5\2\0\2\5"+
+    "\1\0\2\5\1\60\6\5\26\0\6\5\1\0\1\5"+
+    "\1\61\1\62\5\5\20\15\2\0\41\15\17\0\1\63"+
+    "\12\0\1\64\30\0\26\65\1\66\1\67\33\65\25\0"+
+    "\1\70\37\0\2\5\1\0\2\5\1\71\6\5\26\0"+
+    "\1\5\1\72\4\5\1\0\1\5\1\0\6\5\2\0"+
+    "\2\5\1\0\11\5\26\0\6\5\1\0\1\5\1\73"+
+    "\1\74\5\5\2\0\2\5\1\0\4\5\1\75\4\5"+
     "\26\0\6\5\1\0\1\5\1\0\6\5\2\0\2\5"+
-    "\1\0\4\5\1\77\4\5\26\0\6\5\1\0\1\5"+
-    "\1\0\6\5\47\0\1\100\15\0\2\5\1\0\11\5"+
-    "\26\0\3\5\1\101\2\5\1\0\1\5\1\0\6\5"+
+    "\1\0\4\5\1\76\4\5\26\0\6\5\1\0\1\5"+
+    "\1\0\6\5\47\0\1\77\15\0\2\5\1\0\11\5"+
+    "\26\0\3\5\1\100\2\5\1\0\1\5\1\0\6\5"+
     "\2\0\2\5\1\0\11\5\26\0\6\5\1\0\1\5"+
-    "\1\102\1\103\5\5\2\0\1\104\62\0\2\5\1\0"+
-    "\2\5\1\105\6\5\26\0\6\5\1\0\1\5\1\106"+
-    "\1\107\5\5\2\0\2\5\1\0\11\5\26\0\6\5"+
-    "\1\110\1\111\1\0\6\5\2\0\2\5\1\0\4\5"+
-    "\1\112\4\5\26\0\6\5\1\0\1\5\1\0\6\5"+
-    "\2\0\2\5\1\0\1\5\1\113\7\5\26\0\6\5"+
+    "\1\101\1\102\5\5\2\0\1\4\62\0\2\5\1\0"+
+    "\2\5\1\103\6\5\26\0\6\5\1\0\1\5\1\104"+
+    "\1\105\5\5\2\0\2\5\1\0\11\5\26\0\6\5"+
+    "\1\106\1\107\1\0\6\5\2\0\2\5\1\0\4\5"+
+    "\1\110\4\5\26\0\6\5\1\0\1\5\1\0\6\5"+
+    "\2\0\2\5\1\0\1\5\1\111\7\5\26\0\6\5"+
     "\1\0\1\5\1\0\6\5\2\0\2\5\1\0\10\5"+
-    "\1\114\26\0\6\5\1\0\1\5\1\0\6\5\2\0"+
+    "\1\112\26\0\6\5\1\0\1\5\1\0\6\5\2\0"+
     "\2\5\1\0\11\5\26\0\6\5\1\0\1\5\1\0"+
-    "\2\5\1\115\3\5\2\0\2\5\1\0\10\5\1\116"+
+    "\2\5\1\113\3\5\2\0\2\5\1\0\10\5\1\114"+
     "\26\0\6\5\1\0\1\5\1\0\6\5\2\0\2\5"+
-    "\1\0\11\5\26\0\5\5\1\117\1\0\1\5\1\0"+
-    "\6\5\14\0\1\120\50\0\2\5\1\0\7\5\1\121"+
+    "\1\0\11\5\26\0\5\5\1\115\1\0\1\5\1\0"+
+    "\6\5\14\0\1\116\50\0\2\5\1\0\7\5\1\117"+
     "\1\5\26\0\6\5\1\0\1\5\1\0\6\5\2\0"+
-    "\2\5\1\0\10\5\1\122\26\0\6\5\1\0\1\5"+
-    "\1\0\6\5\2\0\2\5\1\0\6\5\1\123\2\5"+
+    "\2\5\1\0\10\5\1\120\26\0\6\5\1\0\1\5"+
+    "\1\0\6\5\2\0\2\5\1\0\6\5\1\121\2\5"+
     "\26\0\6\5\1\0\1\5\1\0\6\5\2\0\2\5"+
-    "\1\0\6\5\1\124\2\5\26\0\6\5\1\0\1\5"+
+    "\1\0\6\5\1\122\2\5\26\0\6\5\1\0\1\5"+
     "\1\0\6\5\2\0\2\5\1\0\11\5\26\0\3\5"+
-    "\1\125\2\5\1\0\1\5\1\0\6\5\46\0\1\126"+
-    "\16\0\2\5\1\0\11\5\26\0\2\5\1\127\3\5"+
-    "\1\0\1\5\1\0\6\5\17\64\1\130\43\64\27\0"+
-    "\1\131\35\0\2\5\1\0\7\5\1\132\1\5\26\0"+
-    "\5\5\1\133\1\0\1\5\1\0\6\5\2\0\2\5"+
-    "\1\0\4\5\1\134\4\5\26\0\6\5\1\0\1\5"+
-    "\1\0\6\5\52\0\2\135\11\0\2\5\1\0\11\5"+
-    "\26\0\6\5\1\135\1\136\1\0\6\5\2\0\2\5"+
-    "\1\0\1\5\1\137\7\5\26\0\5\5\1\140\1\0"+
+    "\1\123\2\5\1\0\1\5\1\0\6\5\46\0\1\124"+
+    "\16\0\2\5\1\0\11\5\26\0\2\5\1\125\3\5"+
+    "\1\0\1\5\1\0\6\5\17\63\1\126\43\63\27\0"+
+    "\1\127\35\0\2\5\1\0\7\5\1\130\1\5\26\0"+
+    "\5\5\1\131\1\0\1\5\1\0\6\5\2\0\2\5"+
+    "\1\0\4\5\1\132\4\5\26\0\6\5\1\0\1\5"+
+    "\1\0\6\5\52\0\2\133\11\0\2\5\1\0\11\5"+
+    "\26\0\6\5\1\133\1\134\1\0\6\5\2\0\2\5"+
+    "\1\0\1\5\1\135\7\5\26\0\5\5\1\136\1\0"+
     "\1\5\1\0\6\5\2\0\2\5\1\0\11\5\26\0"+
-    "\4\5\1\141\1\5\1\0\1\5\1\0\6\5\12\0"+
-    "\1\142\52\0\2\5\1\0\5\5\1\143\3\5\26\0"+
-    "\6\5\1\0\1\5\1\0\6\5\60\0\1\144\4\0"+
+    "\4\5\1\137\1\5\1\0\1\5\1\0\6\5\12\0"+
+    "\1\140\52\0\2\5\1\0\5\5\1\141\3\5\26\0"+
+    "\6\5\1\0\1\5\1\0\6\5\60\0\1\142\4\0"+
     "\2\5\1\0\11\5\26\0\6\5\1\0\1\5\1\0"+
-    "\3\5\1\145\2\5\2\0\2\5\1\0\3\5\1\146"+
+    "\3\5\1\143\2\5\2\0\2\5\1\0\3\5\1\144"+
     "\5\5\26\0\6\5\1\0\1\5\1\0\6\5\14\0"+
-    "\1\147\50\0\2\5\1\0\7\5\1\150\1\5\26\0"+
+    "\1\145\50\0\2\5\1\0\7\5\1\146\1\5\26\0"+
     "\6\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\1\151\10\5\26\0\6\5\1\0\1\5\1\0\6\5"+
-    "\2\0\2\5\1\0\4\5\1\152\4\5\26\0\6\5"+
+    "\1\147\10\5\26\0\6\5\1\0\1\5\1\0\6\5"+
+    "\2\0\2\5\1\0\4\5\1\150\4\5\26\0\6\5"+
     "\1\0\1\5\1\0\6\5\2\0\2\5\1\0\11\5"+
-    "\26\0\6\5\1\0\1\5\1\153\1\154\5\5\2\0"+
-    "\2\5\1\0\11\5\1\155\25\0\6\5\1\0\1\5"+
-    "\1\0\6\5\2\0\2\5\1\0\11\5\26\0\1\156"+
+    "\26\0\6\5\1\0\1\5\1\151\1\152\5\5\2\0"+
+    "\2\5\1\0\11\5\1\153\25\0\6\5\1\0\1\5"+
+    "\1\0\6\5\2\0\2\5\1\0\11\5\26\0\1\154"+
     "\5\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\11\5\26\0\6\5\1\0\1\5\1\0\2\5\1\157"+
-    "\2\5\1\160\2\0\2\5\1\0\11\5\26\0\4\5"+
-    "\1\161\1\5\1\0\1\5\1\0\6\5\17\162\1\163"+
-    "\3\162\2\0\1\164\35\162\20\66\2\0\6\66\2\0"+
-    "\31\66\2\0\2\5\1\0\11\5\26\0\6\5\1\165"+
-    "\1\166\1\0\6\5\2\0\2\5\1\0\11\5\26\0"+
-    "\3\5\1\167\2\5\1\0\1\5\1\0\6\5\2\0"+
-    "\2\5\1\0\1\5\1\170\7\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\60\0\1\171\4\0\2\5\1\0"+
-    "\11\5\26\0\6\5\1\0\1\5\1\0\3\5\1\172"+
+    "\11\5\26\0\6\5\1\0\1\5\1\0\2\5\1\155"+
+    "\2\5\1\156\2\0\2\5\1\0\11\5\26\0\4\5"+
+    "\1\157\1\5\1\0\1\5\1\0\6\5\17\160\1\161"+
+    "\3\160\2\0\1\162\35\160\20\65\2\0\6\65\2\0"+
+    "\31\65\2\0\2\5\1\0\11\5\26\0\6\5\1\163"+
+    "\1\164\1\0\6\5\2\0\2\5\1\0\11\5\26\0"+
+    "\3\5\1\165\2\5\1\0\1\5\1\0\6\5\2\0"+
+    "\2\5\1\0\1\5\1\166\7\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\60\0\1\167\4\0\2\5\1\0"+
+    "\11\5\26\0\6\5\1\0\1\5\1\0\3\5\1\170"+
     "\2\5\2\0\2\5\1\0\11\5\26\0\6\5\1\0"+
-    "\1\5\1\173\1\174\5\5\2\0\2\5\1\0\11\5"+
-    "\26\0\3\5\1\175\2\5\1\0\1\5\1\0\6\5"+
-    "\2\0\2\5\1\0\6\5\1\176\2\5\26\0\6\5"+
-    "\1\0\1\5\1\0\6\5\47\0\1\177\15\0\2\5"+
-    "\1\0\11\5\26\0\3\5\1\200\2\5\1\0\1\5"+
-    "\1\0\6\5\2\0\2\5\1\0\1\5\1\201\7\5"+
-    "\26\0\6\5\1\0\1\5\1\0\6\5\60\0\1\202"+
+    "\1\5\1\171\1\172\5\5\2\0\2\5\1\0\11\5"+
+    "\26\0\3\5\1\173\2\5\1\0\1\5\1\0\6\5"+
+    "\2\0\2\5\1\0\6\5\1\174\2\5\26\0\6\5"+
+    "\1\0\1\5\1\0\6\5\47\0\1\175\15\0\2\5"+
+    "\1\0\11\5\26\0\3\5\1\176\2\5\1\0\1\5"+
+    "\1\0\6\5\2\0\2\5\1\0\1\5\1\177\7\5"+
+    "\26\0\6\5\1\0\1\5\1\0\6\5\60\0\1\200"+
     "\4\0\2\5\1\0\11\5\26\0\6\5\1\0\1\5"+
-    "\1\0\3\5\1\203\2\5\2\0\2\5\1\0\11\5"+
-    "\26\0\1\5\1\204\4\5\1\0\1\5\1\0\6\5"+
-    "\11\0\1\205\53\0\2\5\1\0\4\5\1\206\4\5"+
-    "\26\0\6\5\1\0\1\5\1\0\6\5\5\0\1\207"+
-    "\57\0\2\5\1\0\11\5\26\0\5\5\1\210\1\0"+
-    "\1\5\1\0\6\5\24\162\1\211\55\162\1\163\4\162"+
-    "\1\211\1\164\35\162\7\0\1\212\55\0\2\5\1\0"+
-    "\2\5\1\213\6\5\26\0\6\5\1\0\1\5\1\0"+
-    "\6\5\2\0\2\5\1\0\5\5\1\214\3\5\26\0"+
+    "\1\0\3\5\1\201\2\5\2\0\2\5\1\0\11\5"+
+    "\26\0\1\5\1\202\4\5\1\0\1\5\1\0\6\5"+
+    "\11\0\1\203\53\0\2\5\1\0\4\5\1\204\4\5"+
+    "\26\0\6\5\1\0\1\5\1\0\6\5\5\0\1\205"+
+    "\57\0\2\5\1\0\11\5\26\0\5\5\1\206\1\0"+
+    "\1\5\1\0\6\5\24\160\1\207\55\160\1\161\4\160"+
+    "\1\207\1\162\35\160\7\0\1\210\55\0\2\5\1\0"+
+    "\2\5\1\211\6\5\26\0\6\5\1\0\1\5\1\0"+
+    "\6\5\2\0\2\5\1\0\5\5\1\212\3\5\26\0"+
     "\6\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\11\5\24\0\1\215\1\0\6\5\1\0\1\5\1\0"+
-    "\6\5\7\0\1\216\55\0\2\5\1\0\2\5\1\217"+
+    "\11\5\24\0\1\213\1\0\6\5\1\0\1\5\1\0"+
+    "\6\5\7\0\1\214\55\0\2\5\1\0\2\5\1\215"+
     "\6\5\26\0\6\5\1\0\1\5\1\0\6\5\11\0"+
-    "\1\220\53\0\2\5\1\0\4\5\1\221\4\5\26\0"+
+    "\1\216\53\0\2\5\1\0\4\5\1\217\4\5\26\0"+
     "\6\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\6\5\1\222\2\5\26\0\6\5\1\0\1\5\1\0"+
-    "\6\5\2\0\2\5\1\0\11\5\26\0\5\5\1\223"+
-    "\1\0\1\5\1\0\6\5\51\0\1\224\13\0\2\5"+
-    "\1\0\11\5\26\0\5\5\1\225\1\0\1\5\1\0"+
-    "\6\5\2\0\2\5\1\0\4\5\1\226\4\5\26\0"+
+    "\6\5\1\220\2\5\26\0\6\5\1\0\1\5\1\0"+
+    "\6\5\2\0\2\5\1\0\11\5\26\0\5\5\1\221"+
+    "\1\0\1\5\1\0\6\5\51\0\1\222\13\0\2\5"+
+    "\1\0\11\5\26\0\5\5\1\223\1\0\1\5\1\0"+
+    "\6\5\2\0\2\5\1\0\4\5\1\224\4\5\26\0"+
     "\6\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\1\227\10\5\26\0\4\5\1\230\1\231\1\0\1\5"+
-    "\1\0\6\5\14\0\1\232\50\0\2\5\1\0\7\5"+
-    "\1\233\1\5\26\0\6\5\1\0\1\5\1\0\6\5"+
-    "\6\0\1\234\56\0\2\5\1\0\6\5\1\235\2\5"+
-    "\26\0\6\5\1\0\1\5\1\0\6\5\23\162\1\0"+
-    "\1\211\1\164\35\162\51\0\1\236\13\0\2\5\1\0"+
-    "\11\5\26\0\5\5\1\237\1\0\1\5\1\0\6\5"+
-    "\2\0\2\5\1\0\7\5\1\240\1\5\26\0\6\5"+
-    "\1\0\1\5\1\0\6\5\43\0\1\241\27\0\1\242"+
-    "\54\0\2\5\1\0\3\5\1\243\5\5\26\0\6\5"+
-    "\1\0\1\5\1\0\6\5\14\0\1\244\50\0\2\5"+
-    "\1\0\7\5\1\245\1\5\26\0\6\5\1\0\1\5"+
+    "\1\225\10\5\26\0\4\5\1\226\1\227\1\0\1\5"+
+    "\1\0\6\5\14\0\1\230\50\0\2\5\1\0\7\5"+
+    "\1\231\1\5\26\0\6\5\1\0\1\5\1\0\6\5"+
+    "\6\0\1\232\56\0\2\5\1\0\6\5\1\233\2\5"+
+    "\26\0\6\5\1\0\1\5\1\0\6\5\23\160\1\0"+
+    "\1\207\1\162\35\160\51\0\1\234\13\0\2\5\1\0"+
+    "\11\5\26\0\5\5\1\235\1\0\1\5\1\0\6\5"+
+    "\2\0\2\5\1\0\7\5\1\236\1\5\26\0\6\5"+
+    "\1\0\1\5\1\0\6\5\43\0\1\237\27\0\1\240"+
+    "\54\0\2\5\1\0\3\5\1\241\5\5\26\0\6\5"+
+    "\1\0\1\5\1\0\6\5\14\0\1\242\50\0\2\5"+
+    "\1\0\7\5\1\243\1\5\26\0\6\5\1\0\1\5"+
     "\1\0\6\5\2\0\2\5\1\0\11\5\26\0\6\5"+
-    "\1\246\1\247\1\0\6\5\7\0\1\250\55\0\2\5"+
-    "\1\0\2\5\1\251\6\5\26\0\6\5\1\0\1\5"+
-    "\1\0\6\5\2\0\2\5\1\0\5\5\1\252\3\5"+
+    "\1\244\1\245\1\0\6\5\7\0\1\246\55\0\2\5"+
+    "\1\0\2\5\1\247\6\5\26\0\6\5\1\0\1\5"+
+    "\1\0\6\5\2\0\2\5\1\0\5\5\1\250\3\5"+
     "\26\0\6\5\1\0\1\5\1\0\6\5\2\0\2\5"+
-    "\1\0\11\5\26\0\6\5\1\0\1\5\1\253\1\254"+
-    "\5\5\2\0\2\5\1\0\4\5\1\255\4\5\26\0"+
+    "\1\0\11\5\26\0\6\5\1\0\1\5\1\251\1\252"+
+    "\5\5\2\0\2\5\1\0\4\5\1\253\4\5\26\0"+
     "\6\5\1\0\1\5\1\0\6\5\2\0\2\5\1\0"+
-    "\11\5\26\0\6\5\1\0\1\5\1\256\1\257\5\5"+
-    "\11\0\1\260\53\0\2\5\1\0\4\5\1\261\4\5"+
-    "\26\0\6\5\1\0\1\5\1\0\6\5\7\0\1\262"+
-    "\66\0\1\263\51\0\2\5\1\0\6\5\1\264\2\5"+
-    "\26\0\6\5\1\0\1\5\1\0\6\5\6\0\1\265"+
-    "\56\0\2\5\1\0\1\5\1\266\7\5\26\0\6\5"+
-    "\1\0\1\5\1\0\6\5\56\0\1\267\6\0\2\5"+
+    "\11\5\26\0\6\5\1\0\1\5\1\254\1\255\5\5"+
+    "\11\0\1\256\53\0\2\5\1\0\4\5\1\257\4\5"+
+    "\26\0\6\5\1\0\1\5\1\0\6\5\7\0\1\260"+
+    "\66\0\1\261\51\0\2\5\1\0\6\5\1\262\2\5"+
+    "\26\0\6\5\1\0\1\5\1\0\6\5\6\0\1\263"+
+    "\56\0\2\5\1\0\1\5\1\264\7\5\26\0\6\5"+
+    "\1\0\1\5\1\0\6\5\56\0\1\265\6\0\2\5"+
     "\1\0\11\5\26\0\6\5\1\0\1\5\1\0\1\5"+
-    "\1\270\4\5\57\0\1\271\2\0\1\272\2\0\2\5"+
+    "\1\266\4\5\57\0\1\267\2\0\1\270\2\0\2\5"+
     "\1\0\11\5\26\0\6\5\1\0\1\5\1\0\2\5"+
-    "\1\273\2\5\1\274\13\0\1\275\51\0\2\5\1\0"+
-    "\6\5\1\276\2\5\26\0\6\5\1\0\1\5\1\0"+
-    "\6\5\2\0\2\5\1\0\1\5\1\277\7\5\26\0"+
-    "\6\5\1\0\1\5\1\0\6\5\14\0\1\300\50\0"+
-    "\2\5\1\0\7\5\1\301\1\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\10\0\1\302\63\0\1\303\53\0"+
-    "\2\5\1\0\4\5\1\304\4\5\26\0\6\5\1\0"+
-    "\1\5\1\0\6\5\11\0\1\305\53\0\2\5\1\0"+
-    "\4\5\1\306\4\5\26\0\6\5\1\0\1\5\1\0"+
-    "\6\5\13\0\1\307\51\0\2\5\1\0\6\5\1\310"+
+    "\1\271\2\5\1\272\13\0\1\273\51\0\2\5\1\0"+
+    "\6\5\1\274\2\5\26\0\6\5\1\0\1\5\1\0"+
+    "\6\5\2\0\2\5\1\0\1\5\1\275\7\5\26\0"+
+    "\6\5\1\0\1\5\1\0\6\5\14\0\1\276\50\0"+
+    "\2\5\1\0\7\5\1\277\1\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\10\0\1\300\63\0\1\301\53\0"+
+    "\2\5\1\0\4\5\1\302\4\5\26\0\6\5\1\0"+
+    "\1\5\1\0\6\5\11\0\1\303\53\0\2\5\1\0"+
+    "\4\5\1\304\4\5\26\0\6\5\1\0\1\5\1\0"+
+    "\6\5\13\0\1\305\51\0\2\5\1\0\6\5\1\306"+
     "\2\5\26\0\6\5\1\0\1\5\1\0\6\5\6\0"+
-    "\1\311\66\0\1\312\52\0\2\5\1\0\5\5\1\313"+
+    "\1\307\66\0\1\310\52\0\2\5\1\0\5\5\1\311"+
     "\3\5\26\0\6\5\1\0\1\5\1\0\6\5\11\0"+
-    "\1\314\63\0\1\315\50\0";
+    "\1\312\63\0\1\313\50\0";
 
   private static int [] zzUnpackTrans() {
     int [] result = new int[7446];
@@ -354,10 +354,10 @@ public class lexEx1 implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\1\1\11\13\1\1\11\3\1\11\11\7\1\2\0"+
+    "\1\1\1\11\13\1\1\11\3\1\11\11\7\1\1\0"+
     "\10\1\1\0\5\1\1\0\1\1\1\0\1\11\1\0"+
     "\1\11\1\0\1\11\2\1\1\0\3\1\1\0\1\1"+
-    "\1\0\3\1\1\0\1\1\1\11\7\1\1\11\5\1"+
+    "\1\0\2\1\1\0\1\1\1\11\7\1\1\11\5\1"+
     "\1\11\1\1\2\0\3\1\1\0\4\1\1\11\1\1"+
     "\1\0\2\1\1\0\3\1\1\0\1\1\1\0\4\1"+
     "\2\0\1\1\1\0\3\1\1\0\1\1\1\0\3\1"+
@@ -371,7 +371,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
     "\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[205];
+    int [] result = new int[203];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -780,7 +780,8 @@ public class lexEx1 implements java_cup.runtime.Scanner {
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
             zzDoEOF();
-          { 	return symbol(constantes.EOF);
+          {         System.out.println("Token reconocido EOF: " + yytext());
+	return symbol(ParserSym.EOF);
  }
       }
       else {
@@ -792,123 +793,139 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 53: break;
           case 2: 
             { yycolumn += yylength();  
+    System.out.println("ERROR reconocido: " + yytext());
 /* ignora se debe agregar una forma de recoger todos los errores mas adelante. */
     //return new token(constantes.UKN, yytext(), yyline, yycolumn, "ERROR LEXICO");
             } 
             // fall through
           case 54: break;
           case 3: 
-            { yycolumn += yylength(); 
-    return symbol (ParserSym.ID, yytext());
-    //return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
+            { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.DOUBLENUM, yytext());
+    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
             } 
             // fall through
           case 55: break;
           case 4: 
-            { 
+            { yycolumn += yylength(); 
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.ID, yytext());
+    //return new token (constantes.ID, yytext(), yyline + 1, yycolumn - yylength() + 1, "l(l|d)*");
             } 
             // fall through
           case 56: break;
           case 5: 
+            { 
+            } 
+            // fall through
+          case 57: break;
+          case 6: 
             { yyline++;      // Incrementar la línea
     yycolumn = 1;  // Reiniciar la columna
     yychar = 1;    // Establecer yychar en 1
             } 
             // fall through
-          case 57: break;
-          case 6: 
-            { yycolumn += yylength();    
-    return symbol (ParserSym.IG, yytext());
-    //return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
-            } 
-            // fall through
           case 58: break;
           case 7: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.DP, yytext());
-    //return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.IG, yytext());
+    //return new token (constantes.IG, yytext(), yyline + 1, yycolumn - yylength() + 1, "=");
             } 
             // fall through
           case 59: break;
           case 8: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.PYC, yytext());
-    //return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.DP, yytext());
+    //return new token (constantes.DP, yytext(), yyline + 1, yycolumn - yylength() + 1, ":");
             } 
             // fall through
           case 60: break;
           case 9: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.PA, yytext());
-    //return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.PYC, yytext());
+    //return new token (constantes.PYC, yytext(), yyline + 1, yycolumn - yylength() + 1, ";");
             } 
             // fall through
           case 61: break;
           case 10: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.PC, yytext());
-    //return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.PA, yytext());
+    //return new token (constantes.PA, yytext(), yyline + 1, yycolumn - yylength() + 1, "(");
             } 
             // fall through
           case 62: break;
           case 11: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.COMA, yytext());
-    //return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.PC, yytext());
+    //return new token (constantes.PC, yytext(), yyline + 1, yycolumn - yylength() + 1, ")");
             } 
             // fall through
           case 63: break;
           case 12: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.ARROBA, yytext());
-    //return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.COMA, yytext());
+    //return new token (constantes.COMA, yytext(), yyline + 1, yycolumn - yylength() + 1, ",");
             } 
             // fall through
           case 64: break;
           case 13: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.CA, yytext());
-    //return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.ARROBA, yytext());
+    //return new token (constantes.ARROBA, yytext(), yyline + 1, yycolumn - yylength() + 1, "@");
             } 
             // fall through
           case 65: break;
           case 14: 
             { yycolumn += yylength();    
-    return symbol (ParserSym.CC, yytext());
-    //return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.CA, yytext());
+    //return new token (constantes.CA, yytext(), yyline + 1, yycolumn - yylength() + 1, "[");
             } 
             // fall through
           case 66: break;
           case 15: 
-            { yycolumn += yylength();   
-    return symbol (ParserSym.ASIG, yytext());
-    //return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
+            { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.CC, yytext());
+    //return new token (constantes.CC, yytext(), yyline + 1, yycolumn - yylength() + 1, "]");
             } 
             // fall through
           case 67: break;
           case 16: 
             { yycolumn += yylength();   
-    return symbol(ParserSym.STR, yytext());
-    //return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.ASIG, yytext());
+    //return new token (constantes.ASIG, yytext(), yyline + 1, yycolumn - yylength() + 1, "<-");
             } 
             // fall through
           case 68: break;
           case 17: 
             { yycolumn += yylength();   
-    return symbol (ParserSym.POINTER, yytext());
-    //return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
+    System.out.println("Token reconocido: " + yytext());
+    return symbol(ParserSym.STR, yytext());
+    //return new token(constantes.STR, yytext(), yyline + 1, yycolumn - yylength() + 1, "STR");
             } 
             // fall through
           case 69: break;
           case 18: 
-            { yycolumn += yylength();    
-    return symbol (ParserSym.DOUBLE, yytext());
-    //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "dd*");
+            { yycolumn += yylength();   
+    System.out.println("Token reconocido: " + yytext());
+    return symbol (ParserSym.POINTER, yytext());
+    //return new token (constantes.POINTER, yytext(), yyline + 1, yycolumn - yylength() + 1, "->");
             } 
             // fall through
           case 70: break;
           case 19: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.RES, yytext());
     //return new token (constantes.RES, yytext(), yyline + 1, yycolumn - yylength() + 1, "resta");
             } 
@@ -916,6 +933,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 71: break;
           case 20: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.ARR, yytext());
     //return new token (constantes.ARR, yytext(), yyline + 1, yycolumn - yylength() + 1, "arr");
             } 
@@ -923,6 +941,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 72: break;
           case 21: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MOD, yytext());
     //return new token (constantes.MOD, yytext(), yyline + 1, yycolumn - yylength() + 1, "modulo");
             } 
@@ -930,6 +949,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 73: break;
           case 22: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MAX, yytext());
     //return new token (constantes.MAX, yytext(), yyline + 1, yycolumn - yylength() + 1, "maximo");
             } 
@@ -937,6 +957,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 74: break;
           case 23: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MULTI, yytext());
     //return new token (constantes.MULTI, yytext(), yyline + 1, yycolumn - yylength() + 1, "multiplicacion");
             } 
@@ -944,6 +965,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 75: break;
           case 24: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MIN, yytext());
     //return new token (constantes.MIN, yytext(), yyline + 1, yycolumn - yylength() + 1, "minimi");
             } 
@@ -951,6 +973,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 76: break;
           case 25: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.END, yytext());
     //return new token (constantes.END, yytext(), yyline + 1, yycolumn - yylength() + 1, "end");
             } 
@@ -958,6 +981,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 77: break;
           case 26: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.DIV, yytext());
     //return new token (constantes.DIV, yytext(), yyline + 1, yycolumn - yylength() + 1, "divicion");
             } 
@@ -965,6 +989,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 78: break;
           case 27: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.VAR, yytext());
     //return new token (constantes.VAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "var");
             } 
@@ -972,6 +997,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 79: break;
           case 28: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.SUM, yytext());
     //return new token (constantes.SUM, yytext(), yyline + 1, yycolumn - yylength() + 1, "suma");
             } 
@@ -979,6 +1005,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 80: break;
           case 29: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MODA, yytext());
     //return new token (constantes.MODA, yytext(), yyline + 1, yycolumn - yylength() + 1, "moda");
             } 
@@ -986,6 +1013,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 81: break;
           case 30: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.EXEC, yytext());
     //return new token (constantes.EXEC, yytext(), yyline + 1, yycolumn - yylength() + 1, "exec");
             } 
@@ -993,6 +1021,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 82: break;
           case 31: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.EJEX, yytext());
     //return new token (constantes.EJEX, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeX");
             } 
@@ -1000,6 +1029,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 83: break;
           case 32: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.EJEY, yytext());
     //return new token (constantes.EJEY, yytext(), yyline + 1, yycolumn - yylength() + 1, "ejeY");
             } 
@@ -1016,6 +1046,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 85: break;
           case 34: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.PRINT, yytext());
     //return new token (constantes.PRINT, yytext(), yyline + 1, yycolumn - yylength() + 1, "print");
             } 
@@ -1023,6 +1054,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 86: break;
           case 35: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MEDIA, yytext());
     //return new token (constantes.MEDIA, yytext(), yyline + 1, yycolumn - yylength() + 1, "media");
             } 
@@ -1030,6 +1062,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 87: break;
           case 36: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.LABEL, yytext());
     //return new token (constantes.LABEL, yytext(), yyline + 1, yycolumn - yylength() + 1, "label");
             } 
@@ -1037,6 +1070,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 88: break;
           case 37: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.DOUBLE, yytext());
     //return new token (constantes.DOUBLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "double");
             } 
@@ -1044,6 +1078,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 89: break;
           case 38: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.COLUMN, yytext());
     //return new token (constantes.COLUMN, yytext(), yyline + 1, yycolumn - yylength() + 1, "column");
             } 
@@ -1051,6 +1086,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 90: break;
           case 39: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.CHAR, yytext());
     //return new token (constantes.CHAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "char");
             } 
@@ -1058,6 +1094,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 91: break;
           case 40: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.VALUES, yytext());
     //return new token (constantes.VALUES, yytext(), yyline + 1, yycolumn - yylength() + 1, "values");
             } 
@@ -1065,13 +1102,15 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 92: break;
           case 41: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.TITULO, yytext());
     //return new token (constantes.TITULO, yytext(), yyline + 1, yycolumn - yylength() + 1, "titulo");
             } 
             // fall through
           case 93: break;
           case 42: 
-            { yycolumn += yylength();   
+            { yycolumn += yylength();
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.STAPR, yytext());
     //return new token (constantes.STAPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "START PROGRAM");
             } 
@@ -1079,6 +1118,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 94: break;
           case 43: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.MEDIANA, yytext());
     //return new token (constantes.MEDIANA, yytext(), yyline + 1, yycolumn - yylength() + 1, "mediana");
             } 
@@ -1086,6 +1126,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 95: break;
           case 44: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.CONSOLE, yytext());
     //return new token (constantes.CONSOLE, yytext(), yyline + 1, yycolumn - yylength() + 1, "console");
             } 
@@ -1093,6 +1134,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 96: break;
           case 45: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.TITULOX, yytext());
     //return new token (constantes.TITULOX, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloX");
             } 
@@ -1100,6 +1142,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 97: break;
           case 46: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.TITULOY, yytext());
     //return new token (constantes.TITULOY, yytext(), yyline + 1, yycolumn - yylength() + 1, "tituloY");
             } 
@@ -1107,6 +1150,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 98: break;
           case 47: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.GRAPHPIE, yytext());
     //return new token (constantes.GRAPHPIE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphPie");
             } 
@@ -1114,6 +1158,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 99: break;
           case 48: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.GRAPHBAR, yytext());
     //return new token (constantes.GRAPHBAR, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphBar");
             } 
@@ -1121,6 +1166,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 100: break;
           case 49: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.VARIANZA, yytext());
     //return new token (constantes.VARIANZA, yytext(), yyline + 1, yycolumn - yylength() + 1, "varianza");
             } 
@@ -1128,6 +1174,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 101: break;
           case 50: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.GRAPHLINE, yytext());
     //return new token (constantes.GRAPHLINE, yytext(), yyline + 1, yycolumn - yylength() + 1, "graphLine");
             } 
@@ -1135,6 +1182,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 102: break;
           case 51: 
             { yycolumn += yylength();    
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.HISTOGRAM, yytext());
     //return new token (constantes.HISTOGRAM, yytext(), yyline + 1, yycolumn - yylength() + 1, "Histogram");
             } 
@@ -1142,6 +1190,7 @@ public class lexEx1 implements java_cup.runtime.Scanner {
           case 103: break;
           case 52: 
             { yycolumn += yylength();  
+    System.out.println("Token reconocido: " + yytext());
     return symbol (ParserSym.ENDPR, yytext());
     //return new token (constantes.ENDPR, yytext(), yyline + 1, yycolumn - yylength() + 1, "END PROGRAM");
             } 

@@ -1,1 +1,0 @@
-jflex.base.AutoValue_IntPair
