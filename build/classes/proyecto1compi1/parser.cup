@@ -9,7 +9,8 @@ terminal IG, UKN, STR, STAPR, ENDPR, DP, PYC, END, ASIG, PA, PC, COMA, ARROBA, C
 terminal MULTI, MOD, MEDIA, MEDIANA,MODA, VARIANZA, MIN, MAX, CONSOLE, PRINT, EXEC, EJEX, EJEY, LABEL, COLUMN, VALUES, TITULO;
 terminal TITULOX, TITULOY, GRAPHPIE, GRAPHBAR, GRAPHLINE, HISTOGRAM, DOUBLE, ID, DOUBLENUM;
 
-non terminal L, CODIGOS, CODIGO, DECLARACION, LISTAVALORESSTR, LISTAVALORESDOUBLE , LISTADOUBLE, LISTASTR, IMPRIMIR, EXP, EXPS;
+non terminal L, CODIGOS, DECLARACION, CODIGO, TIPO, EXP, EXPS, IMPRIMIR, LISTA, OPERACION, OPERANDO;
+non terminal ARREGLO;
 
 start with L;
 
@@ -21,27 +22,50 @@ CODIGOS ::=  CODIGOS CODIGO
 CODIGO ::= DECLARACION
     |IMPRIMIR;
 
-IMPRIMIR ::= CONSOLE DP DP PRINT IG EXPS:var END PYC {: Main.jTextArea3.append(var.toString()replace("\"", "") + "\n"); :};
+OPERACION ::= OPERANDO:oper PA EXP:op1 COMA EXP:op2 PC {:    double resultado = 0;
+    switch (oper.toString()) {
+        case "+":
+            resultado = Double.parseDouble(op1.toString()) + Double.parseDouble(op2.toString());
+            break;
+        case "-":
+            resultado = Double.parseDouble(op1.toString()) - Double.parseDouble(op2.toString());
+            break;
+        case "/":
+            resultado = Double.parseDouble(op1.toString()) / Double.parseDouble(op2.toString());
+            break;
+        case "*":
+            resultado = Double.parseDouble(op1.toString()) * Double.parseDouble(op2.toString());
+            break;
+        case "%":
+            resultado = Double.parseDouble(op1.toString()) % Double.parseDouble(op2.toString());
+            break;
+    }
+    RESULT = resultado; :};
+
+OPERANDO ::= SUM:str {: RESULT = "+"; :}
+    |RES:str {: RESULT = "-"; :}
+    |DIV:str {: RESULT = "/"; :}
+    |MULTI:str {: RESULT = "*"; :}
+    |MOD:str {: RESULT = "%"; :};
+
+IMPRIMIR ::= CONSOLE DP DP PRINT IG EXPS:var END PYC {: Main.jTextArea3.append(var.toString().replace("\"", "") + "\n"); :}
+    |CONSOLE DP DP COLUMN IG EXP:titulo POINTER ARREGLO:arreglo END PYC {: Main.jTextArea3.append("--------------------\n" + titulo.toString().replace("\"", "") + "\n--------------------\n" + arreglo.toString().replace("\"", "").replace(",", "\n") + "\n"); :};
+
+ARREGLO ::= LISTA:str {: RESULT = str; :}
+    | ARROBA ID:id {: RESULT = Main.miObjeto.obtenerDelMapa(id.toString().toLowerCase()); :};
+
+DECLARACION ::= VAR DP TIPO DP DP ID:name ASIG  EXP:val END PYC {: Main.miObjeto.agregarAlMapa(name.toString().toLowerCase(), val.toString()); :}
+    | ARR DP TIPO DP DP ARROBA ID:name ASIG  LISTA:val END PYC {: Main.miObjeto.agregarAlMapa(name.toString().toLowerCase(), val.toString()); :};
+
+LISTA ::= CA EXPS:str CC {: RESULT = str; :};
+
+TIPO ::= DOUBLE:str {: RESULT = str; :}
+    | CHAR:str {: RESULT = str; :}; 
 
 EXPS ::= EXPS:expresiones COMA EXP:exp {: RESULT = expresiones + ", " + exp;  :}
     | EXP:exp {: RESULT = exp; :};
 
-EXP ::= ID:id {: RESULT = Main.miObjeto.obtenerDelMapa(id.toString()); :}
+EXP ::= ID:id {: RESULT = Main.miObjeto.obtenerDelMapa(id.toString().toLowerCase()); :}
     | STR:str {: RESULT = str; :}
-    | DOUBLENUM:num {: RESULT = num; :};
-
-
-DECLARACION ::= VAR DP CHAR DP DP ID:name ASIG STR:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
-    |VAR DP DOUBLE DP DP ID:name ASIG DOUBLENUM:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
-    |ARR DP CHAR DP DP ARROBA ID:name ASIG LISTAVALORESSTR:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :}
-    |ARR DP DOUBLE DP DP ARROBA ID:name ASIG LISTAVALORESDOUBLE:var END PYC {: Main.miObjeto.agregarAlMapa(name.toString(), var.toString()); :};
-
-LISTAVALORESSTR ::= CA LISTASTR:lst CC {: RESULT = lst; :};
-LISTAVALORESDOUBLE ::= CA LISTADOUBLE:lst CC {: RESULT = lst; :};
-
-
-LISTASTR ::= LISTASTR:lista COMA STR:str {: RESULT = lista + ", " + str; :}
-    | STR:str {: RESULT = str; :};
-
-LISTADOUBLE ::= LISTADOUBLE:lista COMA DOUBLENUM:num {: RESULT = lista + ", " + num; :}
-    | DOUBLENUM:num {: RESULT = num; :};
+    | DOUBLENUM:num {: RESULT = num; :}
+    | OPERACION:ope {: RESULT = ope; :};

@@ -1,4 +1,5 @@
 package proyecto1compi1;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,4 +53,15 @@ public class Objeto {
     public boolean contieneClave(String clave) {
         return mapa.containsKey(clave);
     }
+
+    public void limpiarMapa() {
+        mapa.clear();
+    }
+
+    public void imprimirMapa() {
+        for (Map.Entry<String, String> entrada : mapa.entrySet()) {
+            System.out.println("Clave: " + entrada.getKey() + ", Valor: " + entrada.getValue());
+        }
+    }
+
 }

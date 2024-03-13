@@ -1,6 +1,7 @@
 PROGRAM
 	var:char[]::cadena1 <- "Ejemplo P1 OLC1" end;
-	var:double::cadena2 <- 200.0 end;
+	var:double::numero <- 200.0 end;
+	var:double:: suma <- SUM(5, 2) end;
 	var:char[]:: cadena3 <- "Ejemplo P1 OLC1" end;
 	var:double:: cadena4 <- 200 end;
 
@@ -11,6 +12,32 @@ PROGRAM
 
 	console::print = 23, 45, cadena1 end;
 	console::print = cadena5, cadena6 end;
+
+	VAR:CHAR[]:: PRUEBA <- "HOLA" END;
+	VAR:CHAR[]:: COPIAPRUEBA <- PRuEBA end;
+	console::print = "llega aqui?" end;
+
+	console::print =  "" end;
+
+	console::print = PRUEBA end;
+	console::print = COPIAPRUEBA end;
+
+	console::column = "enteros" -> @cadena8 end;
+	console::column = cadena1 -> [1,2,3,4,5] end;
+
+
+	console::print = suma end;
+	var:double:: resta <- RES(3, 2) end;
+	var:double:: multi <- MUL(4, numero) end; ! Funciona con variables
+	var:double:: division <- DIV(1, variable) end;
+	var:double:: modulo <- MOD(5, 4) end;
+
+
+
+	console::print = resta end;
+	console::print = multi end;
+	console::print = division end;
+	console::print = modulo end;
 	! Declaracion simple
 
 	<!

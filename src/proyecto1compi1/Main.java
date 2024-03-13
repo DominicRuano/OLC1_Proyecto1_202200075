@@ -268,6 +268,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         jTextArea3.setText("");
+        miObjeto.limpiarMapa();
         System.out.println("----- Ejemplo 1 -----");
         int selectedIndex = jTabbedPane1.getSelectedIndex();
         String analisis = "";
@@ -282,6 +283,7 @@ public class Main extends javax.swing.JFrame {
                 Parser sintax = new Parser(scan);
                 sintax.parse().toString();
             } catch (Exception ex) {
+                miObjeto.imprimirMapa();
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
