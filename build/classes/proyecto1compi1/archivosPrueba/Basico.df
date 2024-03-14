@@ -1,4 +1,4 @@
-PROGRAM
+PROGRAM 
 	var:char[]::cadena1 <- "Ejemplo P1 OLC1" end;
 	var:double::numero <- 200.0 end;
 	var:double:: suma <- SUM(5, 2) end;
@@ -6,7 +6,7 @@ PROGRAM
 	var:double:: cadena4 <- 200 end;
 
 	aRr:char[]::@cadena5 <- ["hola", "mundo"] end;
-	arr:double::@cadena6 <- [23, 3] end;
+	arr:double::@cadena6 <- [1,2,3,4,5,6,7,8,9,9] end;
 	arr:char[]:: @cadena7 <- ["hola", "mundo"] end;
 	arr:double:: @cadena8 <- [23, 3] end;
 
@@ -28,18 +28,34 @@ PROGRAM
 
 	console::print = suma end;
 	var:double:: resta <- RES(3, 2) end;
-	var:double:: multi <- MUL(4, numero) end; ! Funciona con variables
-	var:double:: division <- DIV(1, variable) end;
-	var:double:: modulo <- MOD(5, 4) end;
+	var:double:: multi <- MUL(4, suma) end;
+	var:double:: division <- DIV(1, suma) end;
+	var:double:: modulo <- MOD(suma, division) end;
 
+	console::print = "resta",resta end;
+	console::print = "multi",multi end;
+	console::print = "divi",division end;
+	console::print = "modul",modulo end; 
 
+	var:double:: b <- sum(2, 4) end;
+	var:double:: a <- MOD(23, 23) end;
 
-	console::print = resta end;
-	console::print = multi end;
-	console::print = division end;
-	console::print = modulo end;
-	! Declaracion simple
+	var:double:: med1 <- Media([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "la media es: ",  med1 end; 
 
+	var:double:: med2 <- Mediana([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "la mediana es: ",  med2  end; 
+
+	var:double:: med3 <- moda([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "la moda es: ",   med3 end; 
+
+	!var:double:: med4 <- Max([1, 2, SUM(3, b), 4, a]) end;
+	!console::print = "la moda es: ",  med4 end; 
+
+	!var:double:: med5 <- Min([1, 2, SUM(3, b), 4, a]) end;
+	!console::print = "la moda es: ",  med5 end; 
+
+	!console::print = "la moda es: ",  moda([1, 2, SUM(3, b), 4, a]) end; 
 	<!
 
 es to es un comentario multilinea

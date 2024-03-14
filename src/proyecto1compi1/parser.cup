@@ -1,7 +1,15 @@
 package proyecto1compi1;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Collections;
 import java_cup.runtime.*;
 import java_cup.sym;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 class Parser;
 
@@ -10,7 +18,7 @@ terminal MULTI, MOD, MEDIA, MEDIANA,MODA, VARIANZA, MIN, MAX, CONSOLE, PRINT, EX
 terminal TITULOX, TITULOY, GRAPHPIE, GRAPHBAR, GRAPHLINE, HISTOGRAM, DOUBLE, ID, DOUBLENUM;
 
 non terminal L, CODIGOS, DECLARACION, CODIGO, TIPO, EXP, EXPS, IMPRIMIR, LISTA, OPERACION, OPERANDO;
-non terminal ARREGLO;
+non terminal ARREGLO, ESTADISTICAS, FUNCION;
 
 start with L;
 
@@ -21,6 +29,65 @@ CODIGOS ::=  CODIGOS CODIGO
 
 CODIGO ::= DECLARACION
     |IMPRIMIR;
+
+ESTADISTICAS ::= FUNCION:nombre PA  ARREGLO:arreglo PC {: double resultado = 0; String resultado1 = "";
+        List<Double> numbers = Arrays.stream(arreglo.toString().split("\\s*,\\s*"))
+                                     .map(Double::parseDouble)
+                                     .collect(Collectors.toList());
+        switch (nombre.toString()) {
+            case "media":
+                for (Double numero : numbers) {
+                resultado += numero;
+                }
+                resultado = resultado / numbers.size();
+                RESULT = String.valueOf(resultado);
+                break;
+            case "mediana":
+                Collections.sort(numbers);
+                int n = numbers.size();
+                if (n % 2 == 0) {
+                    resultado = (numbers.get(n / 2 - 1) + numbers.get(n / 2)) / 2.0;
+                } else {
+                    resultado = numbers.get(n / 2);
+                }
+                RESULT = String.valueOf(resultado);
+                break;
+            case "moda":
+                Map<Double, Integer> frecuencias = new HashMap<>();
+                for (Double numero : numbers) {
+                    frecuencias.put(numero, frecuencias.getOrDefault(numero, 0) + 1);
+                }
+
+                int maxFrecuencia = Collections.max(frecuencias.values());
+                List<Double> modas = new ArrayList<>();
+                for (Map.Entry<Double, Integer> entry : frecuencias.entrySet()) {
+                    if (entry.getValue() == maxFrecuencia) {
+                        modas.add(entry.getKey());
+                    }
+                }
+                for (Double numero : modas) {
+                    resultado1 += numero.toString() + ", ";
+                }
+                RESULT = resultado1; 
+                break;
+            case "varianza":
+                // Llamar al método que calcula la varianza
+                Main.jTextArea3.append("Se detecto: varianza con: " + arreglo + "\n"); 
+                break;
+            case "min":
+                RESULT = Collections.max(numbers)
+                break;
+            case "max":
+
+                break;
+        }:};
+
+FUNCION ::= MEDIA {: RESULT = "media"; :}
+    |MEDIANA {: RESULT = "mediana"; :}
+    |MODA {: RESULT = "moda"; :}
+    |VARIANZA {: RESULT = "varianza"; :}
+    |MIN {: RESULT = "min"; :}
+    |MAX {: RESULT = "max"; :};
 
 OPERACION ::= OPERANDO:oper PA EXP:op1 COMA EXP:op2 PC {:    double resultado = 0;
     switch (oper.toString()) {
@@ -60,7 +127,8 @@ DECLARACION ::= VAR DP TIPO DP DP ID:name ASIG  EXP:val END PYC {: Main.miObjeto
 LISTA ::= CA EXPS:str CC {: RESULT = str; :};
 
 TIPO ::= DOUBLE:str {: RESULT = str; :}
-    | CHAR:str {: RESULT = str; :}; 
+    | CHAR:str {: RESULT = str; :}
+    | OPERACION:ope {: RESULT = ope; :}; 
 
 EXPS ::= EXPS:expresiones COMA EXP:exp {: RESULT = expresiones + ", " + exp;  :}
     | EXP:exp {: RESULT = exp; :};
@@ -68,4 +136,5 @@ EXPS ::= EXPS:expresiones COMA EXP:exp {: RESULT = expresiones + ", " + exp;  :}
 EXP ::= ID:id {: RESULT = Main.miObjeto.obtenerDelMapa(id.toString().toLowerCase()); :}
     | STR:str {: RESULT = str; :}
     | DOUBLENUM:num {: RESULT = num; :}
-    | OPERACION:ope {: RESULT = ope; :};
+    | OPERACION:ope {: RESULT = ope; :}
+    | ESTADISTICAS:esta {: RESULT = esta; :};
