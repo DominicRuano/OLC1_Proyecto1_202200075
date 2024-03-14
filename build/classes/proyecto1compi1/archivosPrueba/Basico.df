@@ -49,13 +49,15 @@ PROGRAM
 	var:double:: med3 <- moda([1, 2, SUM(3, b), 4, a]) end;
 	console::print = "la moda es: ",   med3 end; 
 
-	!var:double:: med4 <- Max([1, 2, SUM(3, b), 4, a]) end;
-	!console::print = "la moda es: ",  med4 end; 
+	var:double:: med4 <- Max([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "el maximo es: ",  med4 end; 
 
-	!var:double:: med5 <- Min([1, 2, SUM(3, b), 4, a]) end;
-	!console::print = "la moda es: ",  med5 end; 
+	var:double:: med5 <- Min([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "el minimo es: ",  med5 end; 
 
-	!console::print = "la moda es: ",  moda([1, 2, SUM(3, b), 4, a]) end; 
+
+	var:double:: med6 <- varianza([1, 2, SUM(3, b), 4, a]) end;
+	console::print = "la varianza es: ",  med6 end; 
 	<!
 
 es to es un comentario multilinea

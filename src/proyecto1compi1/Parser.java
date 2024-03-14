@@ -297,7 +297,7 @@ class CUP$Parser$actions {
 		int arregloleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int arregloright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Object arreglo = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 double resultado = 0; String resultado1 = "";
+		 double resultado = 0; String resultado1 = ""; double maximo = 0; double minimo = 0;
         List<Double> numbers = Arrays.stream(arreglo.toString().split("\\s*,\\s*"))
                                      .map(Double::parseDouble)
                                      .collect(Collectors.toList());
@@ -338,16 +338,36 @@ class CUP$Parser$actions {
                 RESULT = resultado1; 
                 break;
             case "varianza":
-                // Llamar al método que calcula la varianza
-                Main.jTextArea3.append("Se detecto: varianza con: " + arreglo + "\n"); 
+                double suma = 0;
+                for (Double numero : numbers) {
+                    suma += numero;
+                }
+                double media = suma / numbers.size();
+
+                double sumaCuadradosDiferencias = 0;
+                for (Double numero : numbers) {
+                    sumaCuadradosDiferencias += Math.pow(numero - media, 2);
+                }
+
+                double varianza = sumaCuadradosDiferencias / numbers.size();
+
+                RESULT = varianza;
                 break;
             case "min":
-                // Llamar al método que encuentra el valor mínimo
-                Main.jTextArea3.append("Se detecto: min con: " + arreglo + "\n"); 
+                for (Double numero : numbers) {
+                    if (numero < minimo) {
+                        minimo = numero;
+                    }
+                }
+                RESULT = minimo;
                 break;
             case "max":
-                // Llamar al método que encuentra el valor máximo
-                Main.jTextArea3.append("Se detecto: max con: " + arreglo + "\n"); 
+                for (Double numero : numbers) {
+                    if (numero > maximo) {
+                        maximo = numero;
+                    }
+                }
+                RESULT = maximo;
                 break;
         }
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("ESTADISTICAS",12, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);

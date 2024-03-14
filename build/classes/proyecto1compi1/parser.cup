@@ -30,7 +30,7 @@ CODIGOS ::=  CODIGOS CODIGO
 CODIGO ::= DECLARACION
     |IMPRIMIR;
 
-ESTADISTICAS ::= FUNCION:nombre PA  ARREGLO:arreglo PC {: double resultado = 0; String resultado1 = "";
+ESTADISTICAS ::= FUNCION:nombre PA  ARREGLO:arreglo PC {: double resultado = 0; String resultado1 = ""; double maximo = 0; double minimo = 0;
         List<Double> numbers = Arrays.stream(arreglo.toString().split("\\s*,\\s*"))
                                      .map(Double::parseDouble)
                                      .collect(Collectors.toList());
@@ -71,14 +71,36 @@ ESTADISTICAS ::= FUNCION:nombre PA  ARREGLO:arreglo PC {: double resultado = 0; 
                 RESULT = resultado1; 
                 break;
             case "varianza":
-                // Llamar al método que calcula la varianza
-                Main.jTextArea3.append("Se detecto: varianza con: " + arreglo + "\n"); 
+                double suma = 0;
+                for (Double numero : numbers) {
+                    suma += numero;
+                }
+                double media = suma / numbers.size();
+
+                double sumaCuadradosDiferencias = 0;
+                for (Double numero : numbers) {
+                    sumaCuadradosDiferencias += Math.pow(numero - media, 2);
+                }
+
+                double varianza = sumaCuadradosDiferencias / numbers.size();
+
+                RESULT = varianza;
                 break;
             case "min":
-                RESULT = Collections.max(numbers)
+                for (Double numero : numbers) {
+                    if (numero < minimo) {
+                        minimo = numero;
+                    }
+                }
+                RESULT = minimo;
                 break;
             case "max":
-
+                for (Double numero : numbers) {
+                    if (numero > maximo) {
+                        maximo = numero;
+                    }
+                }
+                RESULT = maximo;
                 break;
         }:};
 
